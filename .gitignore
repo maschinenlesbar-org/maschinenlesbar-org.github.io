@@ -1,0 +1,7 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+vendor/
+# GitHub Pages ignores your lockfile and resolves gems itself, so don't pin it.
+Gemfile.lock
