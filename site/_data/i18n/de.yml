@@ -1,0 +1,111 @@
+# Deutsche Oberflächentexte. Gleiche Schlüssel wie en.yml (sonst bricht der Build ab).
+# Platzhalter wie %tools% setzen die Templates ein.
+
+name: Deutsch
+
+site:
+  title: maschinenlesbar.org
+  description: >-
+    Kommandozeilen-Tools, TypeScript-Clients und Skills für Claude Code zu offenen APIs aus
+    Staat und Verwaltung in Deutschland – Parlament, Statistik, Wetter, Pegelstände, Energie,
+    Warnungen und mehr.
+
+nav:
+  label: Hauptnavigation
+  tools: Tools
+  design: So funktionieren sie
+  claude: Claude Code
+  github: GitHub
+  language: Sprache
+  skip: Zum Inhalt springen
+
+hero:
+  eyebrow: Offene Daten, maschinenlesbar
+  title: Die APIs von Staat und Verwaltung – auf der Kommandozeile
+  intro: >-
+    maschinenlesbar.org veröffentlicht Kommandozeilen-Tools und typisierte TypeScript-Clients
+    für %tools% offene APIs aus Staat und Verwaltung in Deutschland – Parlament und Lobbyismus,
+    amtliche Statistik, Wetter und Pegelstände, Energie, Warnungen, Stellenangebote und mehr.
+    Jedes Tool gibt sauberes JSON aus, hat eine eigene Website auf Deutsch und Englisch und
+    bringt Skills für Claude Code mit.
+  stat_tools: Tools
+  stat_skills: Skills für Claude Code
+  stat_languages: Sprachen
+  browse: Zu den Tools
+  npm: Alle Pakete auf npm
+
+design:
+  title: Ein Design für alle Tools
+  install_title: Installation über npm
+  install_text: >-
+    Jedes Tool ist das npm-Paket <code>@maschinenlesbar.org/&lt;tool&gt;-cli</code> und
+    benötigt Node.js 20 oder neuer.
+  json_title: Sauberes JSON
+  json_text: >-
+    Die Ausgabe ist standardmäßig formatiertes JSON, mit <code>--compact</code> einzeilig;
+    Fehler landen auf stderr mit eindeutigen Exit-Codes – die Tools lassen sich also
+    zuverlässig in Skripten nutzen.
+  library_title: Auch als Bibliothek
+  library_text: >-
+    Jedes Paket ist zugleich ein typisierter API-Client für eigenen Code, ohne
+    HTTP-Abhängigkeiten zur Laufzeit. Jede Website verlinkt die API-Referenz.
+  open_title: Offen als Standard
+  open_text: >-
+    %open% der %tools% APIs brauchen weder Konto noch Schlüssel. Wo einer nötig ist, geben Sie
+    ihn selbst an – Schlüssel oder Zugangsdaten sind nie enthalten.
+  example_title: Beispiel
+  example_text: "Ein Tool installieren, die API abfragen und denselben Client in TypeScript nutzen:"
+
+tools:
+  title: Die Tools
+  intro: >-
+    Jede Karte verlinkt die Website des Tools mit Befehlen, Anleitungen und API-Referenz. Die
+    Beschreibungen zeigen, was Sie mit dem Tool und seinen Skills für Claude Code tun können.
+  skills: "%skills% Skills"
+  access_open: ohne Schlüssel
+  access_key: API-Schlüssel
+  access_account: Konto
+  website: Website
+  github: GitHub
+  npm: npm
+
+filter:
+  placeholder: Nach Name, Thema oder API filtern…
+  search_label: Tools filtern
+  category_label: Kategorie
+  all: Alle
+  total_format: "%total% Tools"
+  count_format: "%visible% von %total% Tools"
+  empty: Kein Tool gefunden.
+
+claude:
+  title: Skills für Claude Code
+  text: >-
+    Jedes Tool bringt Skills für Claude Code mit, die Claude beibringen, es auszuführen und
+    seine Ausgabe zu lesen – %skills% Skills in %tools% Plugins, veröffentlicht über einen
+    gemeinsamen Marketplace. Einmal hinzufügen, dann die gewünschten Plugins installieren:
+  more: Zum Plugin-Marketplace
+
+data:
+  title: Das Werkzeug, nicht die Daten
+  text: >-
+    Die Daten stammen von den öffentlichen Stellen hinter der jeweiligen API und unterliegen
+    deren Bedingungen – gemeinfrei, Lizenzen mit Namensnennung oder eigene
+    Nutzungsbedingungen –, dokumentiert in <code>DATA_LICENSE.md</code> im Repository des
+    jeweiligen Tools.
+  license_title: Lizenz
+  license_text: >-
+    Der Code steht unter <strong>AGPL-3.0-or-later</strong> oder einer kommerziellen Lizenz –
+    Kontakt: <a href="mailto:sebs@2xs.org">sebs@2xs.org</a>. Externe Code-Beiträge werden nicht
+    angenommen, damit das Urheberrecht bei einer Person bleibt; Fehlermeldungen sind im
+    Repository des jeweiligen Tools willkommen.
+
+copy:
+  label: Kopieren
+  copied: Kopiert
+  failed: Kopieren fehlgeschlagen – bitte den Text markieren.
+
+footer:
+  tagline: Offene APIs aus Staat und Verwaltung auf der Kommandozeile.
+  plugins: Plugins für Claude Code
+  license: AGPL-3.0-or-later oder kommerziell

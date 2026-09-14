@@ -1,0 +1,109 @@
+# English interface strings. de.yml must have exactly the same keys (the build fails
+# otherwise). Placeholders like %tools% are filled in by the templates.
+
+name: English
+
+site:
+  title: maschinenlesbar.org
+  description: >-
+    Command-line tools, TypeScript clients and Claude Code skills for open German
+    public-sector APIs — parliament, statistics, weather, water levels, energy, warnings
+    and more.
+
+nav:
+  label: Main
+  tools: Tools
+  design: How they work
+  claude: Claude Code
+  github: GitHub
+  language: Language
+  skip: Skip to content
+
+hero:
+  eyebrow: Open data, machine-readable
+  title: Germany's public-sector APIs, on your command line
+  intro: >-
+    maschinenlesbar.org publishes command-line tools and typed TypeScript clients for
+    %tools% open German public-sector APIs — parliament and lobbying, official statistics,
+    weather and water levels, energy, public warnings, jobs and more. Every tool prints
+    clean JSON, has its own website in English and German, and comes with skills for
+    Claude Code.
+  stat_tools: tools
+  stat_skills: Claude Code skills
+  stat_languages: languages
+  browse: Browse the tools
+  npm: All packages on npm
+
+design:
+  title: One design, every tool
+  install_title: Install from npm
+  install_text: >-
+    Every tool is the npm package <code>@maschinenlesbar.org/&lt;tool&gt;-cli</code> and
+    needs Node.js 20 or newer.
+  json_title: Clean JSON
+  json_text: >-
+    Output is pretty-printed JSON by default and compact with <code>--compact</code>;
+    errors go to stderr with distinct exit codes, so the tools are safe to script.
+  library_title: A library, too
+  library_text: >-
+    Each package is also a typed API client for your own code, with no runtime HTTP
+    dependencies. Every website links its API reference.
+  open_title: Open by default
+  open_text: >-
+    %open% of the %tools% APIs need no account and no key. Where one is needed, you supply
+    it — no key or credential is ever bundled.
+  example_title: Example
+  example_text: "Install a tool, query the API, and use the same client in TypeScript:"
+
+tools:
+  title: The tools
+  intro: >-
+    Each card links the tool's website, with its commands, guides and API reference. The
+    descriptions show what you can do with the tool and its Claude Code skills.
+  skills: "%skills% skills"
+  access_open: no key
+  access_key: API key
+  access_account: account
+  website: Website
+  github: GitHub
+  npm: npm
+
+filter:
+  placeholder: Filter by name, topic or API…
+  search_label: Filter tools
+  category_label: Category
+  all: All
+  total_format: "%total% tools"
+  count_format: "%visible% of %total% tools"
+  empty: No tool matches.
+
+claude:
+  title: Skills for Claude Code
+  text: >-
+    Every tool ships Claude Code skills that teach Claude to run it and read its output —
+    %skills% skills in %tools% plugins, published through one marketplace. Add it once,
+    then install the plugins you need:
+  more: Browse the plugin marketplace
+
+data:
+  title: The tool, not the data
+  text: >-
+    The data comes from the public bodies behind each API, under their own terms — public
+    domain, attribution licences or custom provider terms — documented in
+    <code>DATA_LICENSE.md</code> in each tool's repository.
+  license_title: License
+  license_text: >-
+    The code is dual-licensed <strong>AGPL-3.0-or-later</strong> or under a commercial
+    license — contact <a href="mailto:sebs@2xs.org">sebs@2xs.org</a>. External code
+    contributions aren't accepted, to keep the copyright with a single holder; bug reports
+    are welcome in each tool's repository.
+
+copy:
+  label: Copy
+  copied: Copied
+  failed: Copying failed — select the text instead.
+
+footer:
+  tagline: Open German public-sector APIs on the command line.
+  plugins: Claude Code plugins
+  license: AGPL-3.0-or-later or commercial

@@ -1,0 +1,98 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign c = site.data.catalog -%}
+{%- assign open_count = c.tool_count | minus: c.keyed_count -%}
+{%- if page.lang == site.default_lang -%}
+  {%- assign plugins_home = c.plugins_url -%}
+  {%- assign lang_path = '' -%}
+{%- else -%}
+  {%- assign plugins_home = c.plugins_url | append: page.lang | append: '/' -%}
+  {%- assign lang_path = page.lang | append: '/' -%}
+{%- endif -%}
+<section class="hero flow">
+  <p class="eyebrow">{{ t.hero.eyebrow }}</p>
+  <h1>{{ t.hero.title }}</h1>
+  <p class="intro">{{ t.hero.intro | replace: "%tools%", c.tool_count }}</p>
+  <ul role="list" class="stats">
+    <li><strong>{{ c.tool_count }}</strong> {{ t.hero.stat_tools }}</li>
+    <li><strong>{{ c.skill_count }}</strong> {{ t.hero.stat_skills }}</li>
+    <li><strong>2</strong> {{ t.hero.stat_languages }}</li>
+  </ul>
+  <p class="link-row">
+    <a class="btn --primary" href="#tools">{{ t.hero.browse }}</a>
+    <a href="https://www.npmjs.com/org/{{ site.npm_scope }}">{{ t.hero.npm }} →</a>
+  </p>
+</section>
+
+<section id="design" class="flow">
+  <h2>{{ t.design.title }}</h2>
+  <ul role="list" class="principles auto-grid gap">
+    <li class="card flow"><h3>{{ t.design.install_title }}</h3><p>{{ t.design.install_text }}</p></li>
+    <li class="card flow"><h3>{{ t.design.json_title }}</h3><p>{{ t.design.json_text }}</p></li>
+    <li class="card flow"><h3>{{ t.design.library_title }}</h3><p>{{ t.design.library_text }}</p></li>
+    <li class="card flow"><h3>{{ t.design.open_title }}</h3><p>{{ t.design.open_text | replace: "%open%", open_count | replace: "%tools%", c.tool_count }}</p></li>
+  </ul>
+  <h3>{{ t.design.example_title }}</h3>
+  <p>{{ t.design.example_text }}</p>
+  {%- capture example_cli %}npm i -g @maschinenlesbar.org/tagesschau-cli
+tagesschau homepage --compact{% endcapture %}
+  {% include copy.html code=example_cli %}
+  {%- capture example_ts %}import { TagesschauClient } from "@maschinenlesbar.org/tagesschau-cli";
+
+const client = new TagesschauClient();
+const home = await client.homepage();{% endcapture %}
+  {% include copy.html code=example_ts %}
+</section>
+
+<section id="tools" class="flow">
+  <h2>{{ t.tools.title }}</h2>
+  <p class="note">{{ t.tools.intro }}</p>
+  <plugin-filter
+    placeholder="{{ t.filter.placeholder | escape }}"
+    search-label="{{ t.filter.search_label | escape }}"
+    category-label="{{ t.filter.category_label | escape }}"
+    all-label="{{ t.filter.all | escape }}"
+    total-format="{{ t.filter.total_format | escape }}"
+    count-format="{{ t.filter.count_format | escape }}"
+    empty-text="{{ t.filter.empty | escape }}">
+    <ul role="list" class="catalogue auto-grid gap">
+      {%- for tool in c.tools %}
+      {%- assign l = tool.i18n[page.lang] %}
+      {%- assign access_key = 'access_' | append: tool.access %}
+      <li data-plugin data-category="{{ tool.category | escape }}" data-category-label="{{ l.category | escape }}" data-search="{{ l.search | escape }}">
+        <article class="card">
+          <div class="card-head">
+            <h3><a href="{{ tool.website_url }}{{ lang_path }}"><code>{{ tool.bin }}</code></a></h3>
+            <span class="badge">{{ l.category }}</span>
+          </div>
+          <p{% if l.description_lang %} lang="{{ l.description_lang }}"{% endif %}>{{ l.description | escape }}</p>
+          <p class="meta">{{ t.tools.skills | replace: "%skills%", tool.skills }} · {{ t.tools[access_key] }} · v{{ tool.version }}</p>
+          <p class="card-links">
+            <a href="{{ tool.website_url }}{{ lang_path }}">{{ t.tools.website }}</a>
+            <a href="{{ tool.github_url }}">{{ t.tools.github }}</a>
+            <a href="{{ tool.npm_url }}">{{ t.tools.npm }}</a>
+          </p>
+        </article>
+      </li>
+      {%- endfor %}
+    </ul>
+  </plugin-filter>
+</section>
+
+<section id="claude" class="flow">
+  <h2>{{ t.claude.title }}</h2>
+  <p>{{ t.claude.text | replace: "%skills%", c.skill_count | replace: "%tools%", c.tool_count }}</p>
+  {%- capture claude_install %}/plugin marketplace add {{ c.marketplace_repo }}
+/plugin install fim-portal@{{ c.marketplace }}{% endcapture %}
+  {% include copy.html code=claude_install %}
+  <p><a href="{{ plugins_home }}">{{ t.claude.more }} →</a></p>
+</section>
+
+<section id="data" class="flow">
+  <h2>{{ t.data.title }}</h2>
+  <p>{{ t.data.text }}</p>
+  <h3>{{ t.data.license_title }}</h3>
+  <p>{{ t.data.license_text }}</p>
+</section>

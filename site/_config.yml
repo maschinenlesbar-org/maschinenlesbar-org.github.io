@@ -1,0 +1,40 @@
+# The maschinenlesbar.org landing page, served at the organisation root. Same stack as
+# the plugin marketplace site and the CLI websites: Jekyll, banira web components,
+# Fylgja CSS. Built and deployed by .github/workflows/pages.yml.
+
+url: https://maschinenlesbar-org.github.io
+baseurl: ""
+org: maschinenlesbar-org
+npm_scope: maschinenlesbar.org
+
+# Read by _plugins/catalog.rb. The tool list is the Claude Code plugin marketplace;
+# each tool's details come from its CLI repository at cli_ref.
+catalog:
+  org: maschinenlesbar-org
+  marketplace_repo: maschinenlesbar-org/plugins
+  marketplace_ref: main
+  cli_ref: main
+  cache: .cache/repos
+
+# Every language gets the full site; strings live in _data/i18n/<lang>.yml.
+# The default language is served at the root, the others under /<lang>/.
+languages: [en, de]
+default_lang: en
+
+permalink: pretty
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules
+  - components
+  - scripts
+  - vendor
