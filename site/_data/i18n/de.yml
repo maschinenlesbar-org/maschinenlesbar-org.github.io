@@ -1,5 +1,4 @@
 # Deutsche Oberflächentexte. Gleiche Schlüssel wie en.yml (sonst bricht der Build ab).
-# Platzhalter wie %tools% setzen die Templates ein.
 
 name: Deutsch
 
@@ -12,9 +11,9 @@ site:
 
 nav:
   label: Hauptnavigation
-  tools: Tools
   design: So funktionieren sie
-  claude: Claude Code
+  tools: Tools
+  blog: Blog
   github: GitHub
   language: Sprache
   skip: Zum Inhalt springen
@@ -24,14 +23,12 @@ hero:
   title: Die APIs von Staat und Verwaltung – auf der Kommandozeile
   intro: >-
     maschinenlesbar.org veröffentlicht Kommandozeilen-Tools und typisierte TypeScript-Clients
-    für %tools% offene APIs aus Staat und Verwaltung in Deutschland – Parlament und Lobbyismus,
+    für offene APIs aus Staat und Verwaltung in Deutschland – Parlament und Lobbyismus,
     amtliche Statistik, Wetter und Pegelstände, Energie, Warnungen, Stellenangebote und mehr.
     Jedes Tool gibt sauberes JSON aus, hat eine eigene Website auf Deutsch und Englisch und
     bringt Skills für Claude Code mit.
-  stat_tools: Tools
-  stat_skills: Skills für Claude Code
-  stat_languages: Sprachen
   browse: Zu den Tools
+  blog: Zum Blog
   npm: Alle Pakete auf npm
 
 design:
@@ -39,7 +36,7 @@ design:
   install_title: Installation über npm
   install_text: >-
     Jedes Tool ist das npm-Paket <code>@maschinenlesbar.org/&lt;tool&gt;-cli</code> und
-    benötigt Node.js 20 oder neuer.
+    benötigt Node.js 22.12 oder neuer.
   json_title: Sauberes JSON
   json_text: >-
     Die Ausgabe ist standardmäßig formatiertes JSON, mit <code>--compact</code> einzeilig;
@@ -51,40 +48,32 @@ design:
     HTTP-Abhängigkeiten zur Laufzeit. Jede Website verlinkt die API-Referenz.
   open_title: Offen als Standard
   open_text: >-
-    %open% der %tools% APIs brauchen weder Konto noch Schlüssel. Wo einer nötig ist, geben Sie
-    ihn selbst an – Schlüssel oder Zugangsdaten sind nie enthalten.
+    Die meisten APIs brauchen weder Konto noch Schlüssel. Wo einer nötig ist, geben Sie ihn
+    selbst an – Schlüssel oder Zugangsdaten sind nie enthalten.
   example_title: Beispiel
   example_text: "Ein Tool installieren, die API abfragen und denselben Client in TypeScript nutzen:"
 
 tools:
-  title: Die Tools
-  intro: >-
-    Jede Karte verlinkt die Website des Tools mit Befehlen, Anleitungen und API-Referenz. Die
-    Beschreibungen zeigen, was Sie mit dem Tool und seinen Skills für Claude Code tun können.
-  skills: "%skills% Skills"
-  access_open: ohne Schlüssel
-  access_key: API-Schlüssel
-  access_account: Konto
-  website: Website
-  github: GitHub
-  npm: npm
-
-filter:
-  placeholder: Nach Name, Thema oder API filtern…
-  search_label: Tools filtern
-  category_label: Kategorie
-  all: Alle
-  total_format: "%total% Tools"
-  count_format: "%visible% von %total% Tools"
-  empty: Kein Tool gefunden.
-
-claude:
-  title: Skills für Claude Code
+  title: Ein Tool finden
   text: >-
+    Alle Tools stehen im Plugin-Marketplace, filterbar nach Thema und API, jeweils mit einem
+    Link auf die Website des Tools mit Befehlen, Anleitungen und API-Referenz.
+  link: Zum Plugin-Marketplace
+  claude_title: In Claude Code
+  claude_text: >-
     Jedes Tool bringt Skills für Claude Code mit, die Claude beibringen, es auszuführen und
-    seine Ausgabe zu lesen – %skills% Skills in %tools% Plugins, veröffentlicht über einen
-    gemeinsamen Marketplace. Einmal hinzufügen, dann die gewünschten Plugins installieren:
-  more: Zum Plugin-Marketplace
+    seine Ausgabe zu lesen, veröffentlicht über einen gemeinsamen Marketplace. Einmal
+    hinzufügen, dann die gewünschten Plugins installieren:
+
+blog:
+  title: Blog
+  intro: Neues über die Tools, Releases und die APIs dahinter.
+  latest: Aus dem Blog
+  all: Alle Beiträge
+  back: Alle Beiträge
+  empty: Noch keine Beiträge.
+  date_format: "%-d.%-m.%Y"
+  feed_title: Blog von maschinenlesbar.org
 
 data:
   title: Das Werkzeug, nicht die Daten
@@ -108,4 +97,5 @@ copy:
 footer:
   tagline: Offene APIs aus Staat und Verwaltung auf der Kommandozeile.
   plugins: Plugins für Claude Code
+  feed: Atom-Feed
   license: AGPL-3.0-or-later oder kommerziell

@@ -1,0 +1,15 @@
+{%- comment -%}
+  A list of blog posts, newest first. Usage:
+  {% include post-list.html posts=some_posts limit=3 %} (limit is optional).
+  Expects `t` (the page's i18n strings) to be assigned by the calling layout.
+{%- endcomment -%}
+{%- assign limit = include.limit | default: include.posts.size -%}
+<ul role="list" class="post-list">
+  {%- for post in include.posts limit: limit %}
+  <li class="flow">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+    <p class="meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: t.blog.date_format }}</time></p>
+    <p>{{ post.excerpt | strip_html | strip }}</p>
+  </li>
+  {%- endfor %}
+</ul>

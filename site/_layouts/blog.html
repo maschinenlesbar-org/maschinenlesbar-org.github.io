@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign posts = site.posts | where: "lang", page.lang -%}
+<section class="hero flow">
+  <h1>{{ t.blog.title }}</h1>
+  <p class="intro">{{ t.blog.intro }}</p>
+</section>
+
+<section class="flow">
+  {%- if posts.size > 0 %}
+  {% include post-list.html posts=posts %}
+  {%- else %}
+  <p>{{ t.blog.empty }}</p>
+  {%- endif %}
+</section>

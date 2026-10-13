@@ -1,0 +1,6 @@
+---
+layout: null
+lang: de
+permalink: /de/feed.xml
+---
+{% include feed.xml %}

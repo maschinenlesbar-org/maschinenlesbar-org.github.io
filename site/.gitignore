@@ -1,7 +1,6 @@
 # Build output and caches
 _site/
 .jekyll-cache/
-.cache/
 node_modules/
 .bundle/
 vendor/

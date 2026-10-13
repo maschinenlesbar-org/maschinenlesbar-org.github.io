@@ -1,0 +1,20 @@
+---
+layout: default
+---
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- if page.lang == site.default_lang -%}
+  {%- assign blog_home = '/blog/' -%}
+{%- else -%}
+  {%- assign blog_home = '/' | append: page.lang | append: '/blog/' -%}
+{%- endif -%}
+<article class="post flow">
+  <header class="flow">
+    <p class="eyebrow"><a href="{{ blog_home | relative_url }}">{{ t.blog.title }}</a></p>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: t.blog.date_format }}</time></p>
+  </header>
+  <div class="post-body flow">
+    {{ content }}
+  </div>
+  <p><a href="{{ blog_home | relative_url }}">← {{ t.blog.back }}</a></p>
+</article>

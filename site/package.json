@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build:css": "node scripts/vendor-css.mjs",
-    "build:js": "banira compile components/copy-command.ts components/plugin-filter.ts -o assets/js --no-source-map",
+    "build:js": "banira compile components/copy-command.ts -o assets/js --no-source-map",
     "build:assets": "npm run build:css && npm run build:js",
     "test": "banira test components/*.ts && banira lint components/*.ts --strict",
     "build": "npm run build:assets && bundle exec jekyll build",

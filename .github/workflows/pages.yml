@@ -1,11 +1,9 @@
 name: Pages
 
-# Builds the maschinenlesbar.org landing page from site/ with Jekyll and deploys it
-# to GitHub Pages at the organisation root (https://maschinenlesbar-org.github.io/).
-# The banira components are smoke-tested, linted and compiled, Fylgja's stylesheets
-# are vendored from npm, and the tool catalogue is generated from the plugin
-# marketplace and every CLI repository (see site/_plugins/catalog.rb). That content
-# lives in other repositories, so the site also rebuilds weekly. Nothing is
+# Builds the maschinenlesbar.org website (landing page and blog) from site/ with
+# Jekyll and deploys it to GitHub Pages at the organisation root
+# (https://maschinenlesbar-org.github.io/). The banira components are smoke-tested,
+# linted and compiled, and Fylgja's stylesheets are vendored from npm. Nothing is
 # committed: the site is assembled here and published as a Pages artifact.
 #
 # One-time repo setting: Settings -> Pages -> Build and deployment -> Source ->
@@ -17,9 +15,6 @@ on:
     paths:
       - 'site/**'
       - '.github/workflows/pages.yml'
-  # Pick up new tools, versions and skills from the other repositories.
-  schedule:
-    - cron: '23 5 * * 1'
   workflow_dispatch:
 
 # Least privilege at the workflow level: only read. The Pages/OIDC write scopes

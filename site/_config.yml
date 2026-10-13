@@ -1,20 +1,16 @@
-# The maschinenlesbar.org landing page, served at the organisation root. Same stack as
-# the plugin marketplace site and the CLI websites: Jekyll, banira web components,
-# Fylgja CSS. Built and deployed by .github/workflows/pages.yml.
+# The maschinenlesbar.org website, served at the organisation root: a landing page and
+# a blog. Same stack as the plugin marketplace site and the CLI websites: Jekyll, banira
+# web components, Fylgja CSS. Built and deployed by .github/workflows/pages.yml.
 
 url: https://maschinenlesbar-org.github.io
 baseurl: ""
 org: maschinenlesbar-org
 npm_scope: maschinenlesbar.org
 
-# Read by _plugins/catalog.rb. The tool list is the Claude Code plugin marketplace;
-# each tool's details come from its CLI repository at cli_ref.
-catalog:
-  org: maschinenlesbar-org
-  marketplace_repo: maschinenlesbar-org/plugins
-  marketplace_ref: main
-  cli_ref: main
-  cache: .cache/repos
+# The plugin marketplace site lists every tool; the home page links it.
+plugins_url: https://maschinenlesbar-org.github.io/plugins/
+marketplace: maschinenlesbar
+marketplace_repo: maschinenlesbar-org/plugins
 
 # Every language gets the full site; strings live in _data/i18n/<lang>.yml.
 # The default language is served at the root, the others under /<lang>/.
@@ -22,12 +18,29 @@ languages: [en, de]
 default_lang: en
 
 permalink: pretty
+timezone: Europe/Berlin
 
+# Blog posts: English ones in _posts/, German ones in de/_posts/. A post and its
+# translation share a `ref`, which links them through the language switch.
 defaults:
   - scope:
       path: ""
     values:
       lang: en
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      lang: en
+      permalink: /blog/:year/:month/:title/
+  - scope:
+      path: "de/_posts"
+      type: posts
+    values:
+      layout: post
+      lang: de
+      permalink: /de/blog/:year/:month/:title/
 
 exclude:
   - Gemfile
