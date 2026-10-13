@@ -2,7 +2,7 @@ name: Pages
 
 # Builds the maschinenlesbar.org website (landing page and blog) from site/ with
 # Jekyll and deploys it to GitHub Pages at the organisation root
-# (https://maschinenlesbar-org.github.io/). The banira components are smoke-tested,
+# (https://maschinenlesbar.org/). The banira components are smoke-tested,
 # linted and compiled, and Fylgja's stylesheets are vendored from npm. Nothing is
 # committed: the site is assembled here and published as a Pages artifact.
 #

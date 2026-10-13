@@ -1,0 +1,40 @@
+# The other websites served under https://maschinenlesbar.org/, by path: the plugin
+# marketplace site (maschinenlesbar-org/plugins) and the website of every CLI
+# (maschinenlesbar-org/<name>-cli, deployed by its docs.yml). Each publishes its own
+# <path>/sitemap.xml, and robots.txt lists them all: crawlers read robots.txt only at the
+# root of the host, which is this site. A new CLI gets a line here.
+- plugins
+- abgeordnetenwatch-cli
+- ausbildungssuche-cli
+- autobahn-cli
+- bundeshaushalt-cli
+- bundesrat-cli
+- bundeswahlleiterin-cli
+- ckan-cli
+- destatis-genesis-cli
+- deutsche-digitale-bibliothek-cli
+- dip-bundestag-cli
+- dwd-cli
+- entgeltatlas-cli
+- fim-portal-cli
+- fit-connect-cli
+- fragdenstaat-cli
+- govdata-cli
+- hochwasserzentralen-cli
+- jobsuche-cli
+- ladesaeulenregister-cli
+- lebensmittelwarnung-cli
+- lobbyregister-cli
+- luftqualitaet-cli
+- marktstammdatenregister-cli
+- mudab-cli
+- nina-warnungen-cli
+- oparl-cli
+- openka-cli
+- pegel-online-cli
+- regionalatlas-cli
+- regionalstatistik-cli
+- reisewarnungen-cli
+- smard-cli
+- strahlenschutz-cli
+- tagesschau-cli

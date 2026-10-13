@@ -2,13 +2,13 @@
 # a blog. Same stack as the plugin marketplace site and the CLI websites: Jekyll, banira
 # web components, Fylgja CSS. Built and deployed by .github/workflows/pages.yml.
 
-url: https://maschinenlesbar-org.github.io
+url: https://maschinenlesbar.org
 baseurl: ""
 org: maschinenlesbar-org
 npm_scope: maschinenlesbar.org
 
 # The plugin marketplace site lists every tool; the home page links it.
-plugins_url: https://maschinenlesbar-org.github.io/plugins/
+plugins_url: https://maschinenlesbar.org/plugins/
 marketplace: maschinenlesbar
 marketplace_repo: maschinenlesbar-org/plugins
 

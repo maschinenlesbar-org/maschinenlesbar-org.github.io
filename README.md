@@ -1,10 +1,10 @@
 # maschinenlesbar-org.github.io
 
-The website of **maschinenlesbar.org**, served at <https://maschinenlesbar-org.github.io/>
-(English) and <https://maschinenlesbar-org.github.io/de/> (Deutsch): the blog of the
+The website of **maschinenlesbar.org**, served at <https://maschinenlesbar.org/>
+(English) and <https://maschinenlesbar.org/de/> (Deutsch): the blog of the
 command-line tools, TypeScript clients and Claude Code skills for open German public-sector
 APIs, with links to where they live — the
-[plugin marketplace site](https://maschinenlesbar-org.github.io/plugins/) (every tool and its
+[plugin marketplace site](https://maschinenlesbar.org/plugins/) (every tool and its
 website), GitHub and npm. The site doesn't describe the tools itself.
 
 It uses the same stack as the plugin marketplace site and every CLI's website:
@@ -24,6 +24,9 @@ site/blog/, site/de/blog/   the two blog indexes (front matter only)
 site/_posts/                English posts
 site/de/_posts/             German posts
 site/feed.xml, site/de/     the two Atom feeds (front matter only)
+site/sitemap.xml            this site's sitemap: home pages, blog indexes, posts
+site/robots.txt             robots.txt for all of maschinenlesbar.org, with every site's sitemap
+site/_data/sites.yml        the other sites under the domain (plugins, every CLI): a new CLI gets a line
 site/components/*.ts        banira web components: <copy-command>
 site/assets/css/site.css    site styles on top of Fylgja
 site/scripts/vendor-css.mjs copies the pinned Fylgja stylesheets into assets/vendor/

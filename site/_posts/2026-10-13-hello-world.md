@@ -8,7 +8,7 @@ and TypeScript clients for open German public-sector APIs: new tools and release
 what we learn along the way about the APIs behind them.
 
 Every tool, with its website and its Claude Code skills, is listed in the
-[plugin marketplace](https://maschinenlesbar-org.github.io/plugins/). To try one right
+[plugin marketplace](https://maschinenlesbar.org/plugins/). To try one right
 away:
 
 ```bash

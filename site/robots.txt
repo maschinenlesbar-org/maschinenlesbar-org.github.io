@@ -1,0 +1,15 @@
+---
+# robots.txt for all of maschinenlesbar.org: crawlers read it only here, at the root of
+# the host, so it speaks for every site under it. Everything may be crawled; the
+# sitemaps are this site's and those of the sites in _data/sites.yml.
+layout: null
+permalink: /robots.txt
+sitemap: false
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ "/sitemap.xml" | absolute_url }}
+{%- for path in site.data.sites %}
+Sitemap: {{ "/" | append: path | append: "/sitemap.xml" | absolute_url }}
+{%- endfor %}

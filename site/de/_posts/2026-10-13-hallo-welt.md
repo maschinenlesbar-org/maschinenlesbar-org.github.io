@@ -8,7 +8,7 @@ Kommandozeilen-Tools und TypeScript-Clients für offene APIs aus Staat und Verwa
 Deutschland: neue Tools und Releases, und was wir dabei über die APIs dahinter lernen.
 
 Alle Tools mit ihren Websites und ihren Skills für Claude Code stehen im
-[Plugin-Marketplace](https://maschinenlesbar-org.github.io/plugins/de/). Zum direkten
+[Plugin-Marketplace](https://maschinenlesbar.org/plugins/de/). Zum direkten
 Ausprobieren:
 
 ```bash
