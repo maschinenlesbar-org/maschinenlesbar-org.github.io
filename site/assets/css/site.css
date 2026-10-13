@@ -158,18 +158,18 @@ main > section > copy-command + copy-command {
   margin-block-start: 0.75rem;
 }
 
-/* How the tools work */
+/* Links */
 
-.principles {
-  --max-col-size: 15rem;
+.links {
+  --max-col-size: 18rem;
   padding: 0;
 }
 
-.principles h3 {
-  font-size: 1.05rem;
+.links h3 {
+  font-size: 1.1rem;
 }
 
-.principles p {
+.links p {
   color: var(--muted);
   font-size: 0.95rem;
 }

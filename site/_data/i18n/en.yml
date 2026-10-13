@@ -12,7 +12,6 @@ site:
 
 nav:
   label: Main
-  design: How they work
   tools: Tools
   blog: Blog
   github: GitHub
@@ -23,45 +22,8 @@ hero:
   eyebrow: Open data, machine-readable
   title: Germany's public-sector APIs, on your command line
   intro: >-
-    maschinenlesbar.org publishes command-line tools and typed TypeScript clients for open
-    German public-sector APIs — parliament and lobbying, official statistics, weather and
-    water levels, energy, public warnings, jobs and more. Every tool prints clean JSON, has
-    its own website in English and German, and comes with skills for Claude Code.
-  browse: Browse the tools
-  blog: Read the blog
-  npm: All packages on npm
-
-design:
-  title: One design, every tool
-  install_title: Install from npm
-  install_text: >-
-    Every tool is the npm package <code>@maschinenlesbar.org/&lt;tool&gt;-cli</code> and
-    needs Node.js 22.12 or newer.
-  json_title: Clean JSON
-  json_text: >-
-    Output is pretty-printed JSON by default and compact with <code>--compact</code>;
-    errors go to stderr with distinct exit codes, so the tools are safe to script.
-  library_title: A library, too
-  library_text: >-
-    Each package is also a typed API client for your own code, with no runtime HTTP
-    dependencies. Every website links its API reference.
-  open_title: Open by default
-  open_text: >-
-    Most of the APIs need no account and no key. Where one is needed, you supply it — no
-    key or credential is ever bundled.
-  example_title: Example
-  example_text: "Install a tool, query the API, and use the same client in TypeScript:"
-
-tools:
-  title: Find a tool
-  text: >-
-    Every tool is listed in the plugin marketplace, with a filter by topic and API, and a
-    link to the tool's own website with its commands, guides and API reference.
-  link: Go to the plugin marketplace
-  claude_title: In Claude Code
-  claude_text: >-
-    Every tool ships Claude Code skills that teach Claude to run it and read its output,
-    published through one marketplace. Add it once, then install the plugins you need:
+    maschinenlesbar.org makes command-line tools and TypeScript clients for open German
+    public-sector APIs. This is where we write about them.
 
 blog:
   title: Blog
@@ -73,18 +35,16 @@ blog:
   date_format: "%-d %B %Y"
   feed_title: maschinenlesbar.org blog
 
-data:
-  title: The tool, not the data
-  text: >-
-    The data comes from the public bodies behind each API, under their own terms — public
-    domain, attribution licences or custom provider terms — documented in
-    <code>DATA_LICENSE.md</code> in each tool's repository.
-  license_title: License
-  license_text: >-
-    The code is dual-licensed <strong>AGPL-3.0-or-later</strong> or under a commercial
-    license — contact <a href="mailto:sebs@2xs.org">sebs@2xs.org</a>. External code
-    contributions aren't accepted, to keep the copyright with a single holder; bug reports
-    are welcome in each tool's repository.
+links:
+  title: Elsewhere
+  tools_title: Tools and Claude Code plugins
+  tools_text: >-
+    Every command-line tool, with its own website, and the skills that teach Claude Code to
+    use it.
+  github_title: GitHub
+  github_text: The source code of every tool, its issues and its releases.
+  npm_title: npm
+  npm_text: "Every tool as an npm package under <code>@maschinenlesbar.org</code>."
 
 copy:
   label: Copy

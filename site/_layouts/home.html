@@ -14,55 +14,23 @@ layout: default
   <p class="eyebrow">{{ t.hero.eyebrow }}</p>
   <h1>{{ t.hero.title }}</h1>
   <p class="intro">{{ t.hero.intro }}</p>
-  <p class="link-row">
-    <a class="btn --primary" href="{{ plugins_home }}">{{ t.hero.browse }}</a>
-    <a href="{{ blog_home | relative_url }}">{{ t.hero.blog }} →</a>
-    <a href="https://www.npmjs.com/org/{{ site.npm_scope }}">{{ t.hero.npm }} →</a>
-  </p>
 </section>
 
-<section id="design" class="flow">
-  <h2>{{ t.design.title }}</h2>
-  <ul role="list" class="principles auto-grid gap">
-    <li class="card flow"><h3>{{ t.design.install_title }}</h3><p>{{ t.design.install_text }}</p></li>
-    <li class="card flow"><h3>{{ t.design.json_title }}</h3><p>{{ t.design.json_text }}</p></li>
-    <li class="card flow"><h3>{{ t.design.library_title }}</h3><p>{{ t.design.library_text }}</p></li>
-    <li class="card flow"><h3>{{ t.design.open_title }}</h3><p>{{ t.design.open_text }}</p></li>
-  </ul>
-  <h3>{{ t.design.example_title }}</h3>
-  <p>{{ t.design.example_text }}</p>
-  {%- capture example_cli %}npm i -g @maschinenlesbar.org/tagesschau-cli
-tagesschau homepage --compact{% endcapture %}
-  {% include copy.html code=example_cli %}
-  {%- capture example_ts %}import { TagesschauClient } from "@maschinenlesbar.org/tagesschau-cli";
-
-const client = new TagesschauClient();
-const home = await client.homepage();{% endcapture %}
-  {% include copy.html code=example_ts %}
-</section>
-
-<section id="tools" class="flow">
-  <h2>{{ t.tools.title }}</h2>
-  <p>{{ t.tools.text }}</p>
-  <p class="link-row"><a class="btn --primary" href="{{ plugins_home }}">{{ t.tools.link }}</a></p>
-  <h3>{{ t.tools.claude_title }}</h3>
-  <p>{{ t.tools.claude_text }}</p>
-  {%- capture claude_install %}/plugin marketplace add {{ site.marketplace_repo }}
-/plugin install fim-portal@{{ site.marketplace }}{% endcapture %}
-  {% include copy.html code=claude_install %}
-</section>
-
-{%- if posts.size > 0 %}
 <section id="blog" class="flow">
   <h2>{{ t.blog.latest }}</h2>
-  {% include post-list.html posts=posts limit=3 %}
+  {%- if posts.size > 0 %}
+  {% include post-list.html posts=posts limit=5 %}
   <p><a href="{{ blog_home | relative_url }}">{{ t.blog.all }} →</a></p>
+  {%- else %}
+  <p>{{ t.blog.empty }}</p>
+  {%- endif %}
 </section>
-{%- endif %}
 
-<section id="data" class="flow">
-  <h2>{{ t.data.title }}</h2>
-  <p>{{ t.data.text }}</p>
-  <h3>{{ t.data.license_title }}</h3>
-  <p>{{ t.data.license_text }}</p>
+<section id="links" class="flow">
+  <h2>{{ t.links.title }}</h2>
+  <ul role="list" class="links auto-grid gap">
+    <li class="card flow"><h3><a href="{{ plugins_home }}">{{ t.links.tools_title }}</a></h3><p>{{ t.links.tools_text }}</p></li>
+    <li class="card flow"><h3><a href="https://github.com/{{ site.org }}">{{ t.links.github_title }}</a></h3><p>{{ t.links.github_text }}</p></li>
+    <li class="card flow"><h3><a href="https://www.npmjs.com/org/{{ site.npm_scope }}">{{ t.links.npm_title }}</a></h3><p>{{ t.links.npm_text }}</p></li>
+  </ul>
 </section>

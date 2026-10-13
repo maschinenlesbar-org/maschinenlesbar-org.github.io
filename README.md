@@ -1,11 +1,11 @@
 # maschinenlesbar-org.github.io
 
 The website of **maschinenlesbar.org**, served at <https://maschinenlesbar-org.github.io/>
-(English) and <https://maschinenlesbar-org.github.io/de/> (Deutsch): a landing page for the
+(English) and <https://maschinenlesbar-org.github.io/de/> (Deutsch): the blog of the
 command-line tools, TypeScript clients and Claude Code skills for open German public-sector
-APIs, and a blog. The tools themselves are listed on the
-[plugin marketplace site](https://maschinenlesbar-org.github.io/plugins/), which the landing
-page links.
+APIs, with links to where they live — the
+[plugin marketplace site](https://maschinenlesbar-org.github.io/plugins/) (every tool and its
+website), GitHub and npm. The site doesn't describe the tools itself.
 
 It uses the same stack as the plugin marketplace site and every CLI's website:
 [Jekyll](https://jekyllrb.com/), [banira](https://sebs.github.io/banira/) web components and
@@ -49,7 +49,7 @@ Layout, language and permalink (`/blog/YYYY/MM/slug/`, `/de/blog/YYYY/MM/slug/`)
 the defaults in `site/_config.yml`. A post without a translation simply has no language
 switch. Pushing it to `main` publishes it.
 
-The general copy — the hero, "One design, every tool", licensing — is in
+The rest of the copy — the intro and the link descriptions on the home page — is in
 `site/_data/i18n/en.yml` and `de.yml`.
 
 ## Build and preview locally

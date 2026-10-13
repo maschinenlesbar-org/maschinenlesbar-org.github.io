@@ -45,7 +45,6 @@
     <nav class="container" aria-label="{{ t.nav.label }}">
       <a class="brand" href="{{ home | relative_url }}">maschinenlesbar<span class="brand-tld">.org</span></a>
       <ul role="list">
-        <li><a href="{{ home | append: '#design' | relative_url }}">{{ t.nav.design }}</a></li>
         <li><a href="{{ plugins_home }}">{{ t.nav.tools }}</a></li>
         <li><a href="{{ blog_home | relative_url }}"{% if page.blog or page.layout == 'post' %} aria-current="page"{% endif %}>{{ t.nav.blog }}</a></li>
         <li><a href="https://github.com/{{ site.org }}">{{ t.nav.github }}</a></li>

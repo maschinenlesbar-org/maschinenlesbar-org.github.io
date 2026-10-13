@@ -11,7 +11,6 @@ site:
 
 nav:
   label: Hauptnavigation
-  design: So funktionieren sie
   tools: Tools
   blog: Blog
   github: GitHub
@@ -22,48 +21,8 @@ hero:
   eyebrow: Offene Daten, maschinenlesbar
   title: Die APIs von Staat und Verwaltung – auf der Kommandozeile
   intro: >-
-    maschinenlesbar.org veröffentlicht Kommandozeilen-Tools und typisierte TypeScript-Clients
-    für offene APIs aus Staat und Verwaltung in Deutschland – Parlament und Lobbyismus,
-    amtliche Statistik, Wetter und Pegelstände, Energie, Warnungen, Stellenangebote und mehr.
-    Jedes Tool gibt sauberes JSON aus, hat eine eigene Website auf Deutsch und Englisch und
-    bringt Skills für Claude Code mit.
-  browse: Zu den Tools
-  blog: Zum Blog
-  npm: Alle Pakete auf npm
-
-design:
-  title: Ein Design für alle Tools
-  install_title: Installation über npm
-  install_text: >-
-    Jedes Tool ist das npm-Paket <code>@maschinenlesbar.org/&lt;tool&gt;-cli</code> und
-    benötigt Node.js 22.12 oder neuer.
-  json_title: Sauberes JSON
-  json_text: >-
-    Die Ausgabe ist standardmäßig formatiertes JSON, mit <code>--compact</code> einzeilig;
-    Fehler landen auf stderr mit eindeutigen Exit-Codes – die Tools lassen sich also
-    zuverlässig in Skripten nutzen.
-  library_title: Auch als Bibliothek
-  library_text: >-
-    Jedes Paket ist zugleich ein typisierter API-Client für eigenen Code, ohne
-    HTTP-Abhängigkeiten zur Laufzeit. Jede Website verlinkt die API-Referenz.
-  open_title: Offen als Standard
-  open_text: >-
-    Die meisten APIs brauchen weder Konto noch Schlüssel. Wo einer nötig ist, geben Sie ihn
-    selbst an – Schlüssel oder Zugangsdaten sind nie enthalten.
-  example_title: Beispiel
-  example_text: "Ein Tool installieren, die API abfragen und denselben Client in TypeScript nutzen:"
-
-tools:
-  title: Ein Tool finden
-  text: >-
-    Alle Tools stehen im Plugin-Marketplace, filterbar nach Thema und API, jeweils mit einem
-    Link auf die Website des Tools mit Befehlen, Anleitungen und API-Referenz.
-  link: Zum Plugin-Marketplace
-  claude_title: In Claude Code
-  claude_text: >-
-    Jedes Tool bringt Skills für Claude Code mit, die Claude beibringen, es auszuführen und
-    seine Ausgabe zu lesen, veröffentlicht über einen gemeinsamen Marketplace. Einmal
-    hinzufügen, dann die gewünschten Plugins installieren:
+    maschinenlesbar.org entwickelt Kommandozeilen-Tools und TypeScript-Clients für offene
+    APIs aus Staat und Verwaltung in Deutschland. Hier schreiben wir darüber.
 
 blog:
   title: Blog
@@ -75,19 +34,16 @@ blog:
   date_format: "%-d.%-m.%Y"
   feed_title: Blog von maschinenlesbar.org
 
-data:
-  title: Das Werkzeug, nicht die Daten
-  text: >-
-    Die Daten stammen von den öffentlichen Stellen hinter der jeweiligen API und unterliegen
-    deren Bedingungen – gemeinfrei, Lizenzen mit Namensnennung oder eigene
-    Nutzungsbedingungen –, dokumentiert in <code>DATA_LICENSE.md</code> im Repository des
-    jeweiligen Tools.
-  license_title: Lizenz
-  license_text: >-
-    Der Code steht unter <strong>AGPL-3.0-or-later</strong> oder einer kommerziellen Lizenz –
-    Kontakt: <a href="mailto:sebs@2xs.org">sebs@2xs.org</a>. Externe Code-Beiträge werden nicht
-    angenommen, damit das Urheberrecht bei einer Person bleibt; Fehlermeldungen sind im
-    Repository des jeweiligen Tools willkommen.
+links:
+  title: Woanders
+  tools_title: Tools und Plugins für Claude Code
+  tools_text: >-
+    Alle Kommandozeilen-Tools mit ihren Websites und die Skills, die Claude Code beibringen,
+    sie zu nutzen.
+  github_title: GitHub
+  github_text: Der Quellcode jedes Tools, seine Issues und seine Releases.
+  npm_title: npm
+  npm_text: "Jedes Tool als npm-Paket unter <code>@maschinenlesbar.org</code>."
 
 copy:
   label: Kopieren
