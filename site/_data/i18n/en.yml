@@ -22,8 +22,7 @@ hero:
   eyebrow: Open data, machine-readable
   title: Germany's public-sector APIs, on your command line
   intro: >-
-    maschinenlesbar.org makes command-line tools and TypeScript clients for open German
-    public-sector APIs. This is where we write about them.
+    trying to make government machine readable since 2012
 
 blog:
   title: Blog
