@@ -21,25 +21,24 @@ hero:
   eyebrow: Offene Daten, maschinenlesbar
   title: Die APIs von Staat und Verwaltung – auf der Kommandozeile
   intro: >-
-    seit 2012 dabei, den Staat maschinenlesbar zu machen
+    Seit 2012 auf dem Weg zu einer maschinenlesbaren Verwaltung.
 
 offers:
-  title: Woran wir bauen
+  title: Woran wir gerade arbeiten
   status: In Arbeit
   datasets_title: Datensätze
   datasets_text: >-
-    Das öffentliche deutsche Web als Daten: ein URL-Index jeder Seite, die wir aus rund
-    12.000 offiziellen Quellen abrufen, und ein Inhaltsdatensatz der Seiten, die jemand
-    tatsächlich lesen würde.
+    Ein Verzeichnis aller Seiten, die wir bei rund 12.000 amtlichen Quellen abrufen, und
+    dazu die Inhalte aller Seiten, die zum Lesen gedacht sind.
   search_title: Suchindex
   search_text: >-
-    Eine API über beide Datensätze: Volltext- und hybride Suche, Facetten und Dokumente so,
-    wie sie an einem bestimmten Tag aussahen.
-  classifiers_title: Open-Source-Klassifikatoren
+    Eine Schnittstelle für beide Datensätze: Volltextsuche, Filter und jedes Dokument so,
+    wie es an einem bestimmten Tag aussah.
+  classifiers_title: Offene Klassifikatoren
   classifiers_text: >-
-    Die Modelle, die eine Drucksache, eine Bekanntmachung oder eine Rede von einer
-    Übersichtsliste, einem Kalender oder einer Login-Seite unterscheiden, als Open Source.
-  more: Wie es zusammenhängt
+    Modelle, die erkennen, ob eine Seite eine Drucksache, eine Bekanntmachung oder eine Rede
+    ist – oder nur eine Übersicht, ein Kalender oder eine Anmeldeseite. Quelloffen.
+  more: Wie alles zusammenspielt
 
 blog:
   title: Blog
