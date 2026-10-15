@@ -24,6 +24,23 @@ hero:
   intro: >-
     trying to make government machine readable since 2012
 
+offers:
+  title: What we're building
+  status: In the making
+  datasets_title: Datasets
+  datasets_text: >-
+    The German public web as data: a URL index of every page we fetch from around 12,000
+    official sources, and a content dataset of the pages someone would actually read.
+  search_title: Search index
+  search_text: >-
+    One API over both datasets: full-text and hybrid search, facets, and documents as they
+    stood on a given date.
+  classifiers_title: Open-source classifiers
+  classifiers_text: >-
+    The models that tell a Drucksache, a notice or a speech from a listing, a calendar or a
+    login page, published as open source.
+  more: How it fits together
+
 blog:
   title: Blog
   intro: News about the tools, releases, and the APIs behind them.

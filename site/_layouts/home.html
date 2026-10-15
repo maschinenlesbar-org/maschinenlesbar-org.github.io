@@ -10,10 +10,23 @@ layout: default
   {%- assign blog_home = '/' | append: page.lang | append: '/blog/' -%}
 {%- endif -%}
 {%- assign posts = site.posts | where: "lang", page.lang -%}
+{%- assign architecture = posts | where: "ref", "two-datasets-and-a-facade" | first -%}
 <section class="hero flow">
   <p class="eyebrow">{{ t.hero.eyebrow }}</p>
   <h1>{{ t.hero.title }}</h1>
   <p class="intro">{{ t.hero.intro }}</p>
+</section>
+
+<section id="building" class="flow">
+  <h2>{{ t.offers.title }}</h2>
+  <ul role="list" class="links auto-grid gap">
+    <li class="card flow"><h3>{{ t.offers.datasets_title }}</h3><p class="meta">{{ t.offers.status }}</p><p>{{ t.offers.datasets_text }}</p></li>
+    <li class="card flow"><h3>{{ t.offers.search_title }}</h3><p class="meta">{{ t.offers.status }}</p><p>{{ t.offers.search_text }}</p></li>
+    <li class="card flow"><h3>{{ t.offers.classifiers_title }}</h3><p class="meta">{{ t.offers.status }}</p><p>{{ t.offers.classifiers_text }}</p></li>
+  </ul>
+  {%- if architecture %}
+  <p><a href="{{ architecture.url | relative_url }}">{{ t.offers.more }}: {{ architecture.title | escape }} →</a></p>
+  {%- endif %}
 </section>
 
 <section id="blog" class="flow">
