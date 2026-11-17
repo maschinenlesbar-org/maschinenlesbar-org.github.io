@@ -1,12 +1,7 @@
 ---
 layout: default
 ---
-{%- assign t = site.data.i18n[page.lang] -%}
-{%- if page.lang == site.default_lang -%}
-  {%- assign blog_home = '/blog/' -%}
-{%- else -%}
-  {%- assign blog_home = '/' | append: page.lang | append: '/blog/' -%}
-{%- endif -%}
+{%- include lang.html -%}
 <article class="post flow">
   <header class="flow">
     <p class="eyebrow"><a href="{{ blog_home | relative_url }}">{{ t.blog.title }}</a></p>

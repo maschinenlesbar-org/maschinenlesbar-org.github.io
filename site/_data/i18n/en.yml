@@ -1,49 +1,68 @@
 # English interface strings. de.yml must have exactly the same keys (the build fails
-# otherwise).
+# otherwise). The menu labels come from the pages themselves (_data/nav.yml).
 
 name: English
 
 site:
   title: maschinenlesbar.org
   description: >-
-    Command-line tools, TypeScript clients and Claude Code skills for open German
-    public-sector APIs — parliament, statistics, weather, water levels, energy, warnings
-    and more.
+    A search index over around 12,000 German public-sector sources, and open-source
+    wrappers around the official APIs: for people on the web and the command line, for
+    agents over MCP.
 
 nav:
   label: Main
-  tools: Tools
-  blog: Blog
   github: GitHub
   language: Language
   skip: Skip to content
 
+status:
+  available: Available
+  making: In the making
+
 hero:
   eyebrow: Open data, machine-readable
-  title: Germany's public-sector APIs, on your command line
+  title: German public-sector information, for people and agents
   intro: >-
     trying to make government machine readable since 2012
+  lead: >-
+    A search index over around 12,000 public sources, from the Bundestag down to individual
+    municipalities, and wrappers around the official APIs of federal, state and local
+    bodies. One finds the source, the other fetches its live, structured data.
 
-offers:
-  title: What we're building
-  status: In the making
-  datasets_title: Datasets
-  datasets_text: >-
-    The German public web as data: a URL index of every page we fetch from around 12,000
-    official sources, and a content dataset of the pages someone would actually read.
+halves:
+  title: Two halves, one system
+  search_question: Where is it?
   search_title: Search index
   search_text: >-
-    One API over both datasets: full-text and hybrid search, facets, and documents as they
-    stood on a given date.
-  classifiers_title: Open-source classifiers
-  classifiers_text: >-
-    The models that tell a Drucksache, a notice or a speech from a listing, a calendar or a
-    login page, published as open source.
+    Full-text and semantic search across the German public web, federal to municipal. Every
+    hit says where it comes from.
+  wrappers_question: What does the source say right now?
+  wrappers_title: API wrappers
+  wrappers_text: >-
+    One wrapper per official API, all built to the same template: a typed client, a
+    command-line tool, and next an MCP server.
+  handoff: >-
+    The handoff is the point. The index finds a source, and the matching wrapper fetches
+    its live data. When a wrapper's answer cites a document, the index has it in full.
   more: How it fits together
+
+surfaces:
+  title: For people and for agents
+  web_title: In the browser
+  web_text: >-
+    Search the corpus on the web and read every document with its provenance.
+  cli_title: On the command line
+  cli_text: >-
+    One command-line tool per API, on npm, with skills that teach Claude Code to use it.
+  mcp_title: For agents, over MCP
+  mcp_text: >-
+    The wrappers and the search as MCP tools: finding and fetching from one endpoint,
+    run yourself or hosted by us.
 
 blog:
   title: Blog
-  intro: News about the tools, releases, and the APIs behind them.
+  intro: Notes on the search index, the wrappers, releases, and the APIs behind them.
   latest: From the blog
   all: All posts
   back: All posts
@@ -68,7 +87,7 @@ copy:
   failed: Copying failed — select the text instead.
 
 footer:
-  tagline: Open German public-sector APIs on the command line.
+  tagline: German public-sector information, searchable and machine-readable.
   plugins: Claude Code plugins
   feed: Atom feed
   license: AGPL-3.0-or-later or commercial

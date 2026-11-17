@@ -1,48 +1,70 @@
 # Deutsche Oberflächentexte. Gleiche Schlüssel wie en.yml (sonst bricht der Build ab).
+# Die Menüeinträge kommen aus den Seiten selbst (_data/nav.yml).
 
 name: Deutsch
 
 site:
   title: maschinenlesbar.org
   description: >-
-    Kommandozeilen-Tools, TypeScript-Clients und Skills für Claude Code zu offenen APIs aus
-    Staat und Verwaltung in Deutschland – Parlament, Statistik, Wetter, Pegelstände, Energie,
-    Warnungen und mehr.
+    Ein Suchindex über rund 12.000 Quellen aus Staat und Verwaltung und quelloffene
+    Wrapper um die amtlichen APIs – für Menschen im Web und auf der Kommandozeile, für
+    Agenten über MCP.
 
 nav:
   label: Hauptnavigation
-  tools: Tools
-  blog: Blog
   github: GitHub
   language: Sprache
   skip: Zum Inhalt springen
 
+status:
+  available: Verfügbar
+  making: In Arbeit
+
 hero:
   eyebrow: Offene Daten, maschinenlesbar
-  title: Die APIs von Staat und Verwaltung – auf der Kommandozeile
+  title: Staat und Verwaltung, lesbar für Menschen und Agenten
   intro: >-
     Seit 2012 auf dem Weg zu einer maschinenlesbaren Verwaltung.
+  lead: >-
+    Ein Suchindex über rund 12.000 öffentliche Quellen, vom Bundestag bis zur einzelnen
+    Gemeinde, und Wrapper um die amtlichen APIs von Bund, Ländern und Behörden. Der Index
+    findet die Quelle, der Wrapper holt ihre aktuellen Daten – strukturiert.
 
-offers:
-  title: Woran wir gerade arbeiten
-  status: In Arbeit
-  datasets_title: Datensätze
-  datasets_text: >-
-    Ein Verzeichnis aller Seiten, die wir bei rund 12.000 amtlichen Quellen abrufen, und
-    dazu die Inhalte aller Seiten, die zum Lesen gedacht sind.
+halves:
+  title: Zwei Hälften, ein System
+  search_question: Wo steht das?
   search_title: Suchindex
   search_text: >-
-    Eine Schnittstelle für beide Datensätze: Volltextsuche, Filter und jedes Dokument so,
-    wie es an einem bestimmten Tag aussah.
-  classifiers_title: Offene Klassifikatoren
-  classifiers_text: >-
-    Modelle, die erkennen, ob eine Seite eine Drucksache, eine Bekanntmachung oder eine Rede
-    ist – oder nur eine Übersicht, ein Kalender oder eine Anmeldeseite. Quelloffen.
+    Volltext- und semantische Suche im öffentlichen deutschen Web, vom Bund bis zur
+    Kommune. Jeder Treffer sagt, woher er stammt.
+  wrappers_question: Was sagt die Quelle gerade?
+  wrappers_title: API-Wrapper
+  wrappers_text: >-
+    Ein Wrapper pro amtlicher API, alle nach derselben Vorlage gebaut: ein typisierter
+    Client, ein Kommandozeilen-Tool und als Nächstes ein MCP-Server.
+  handoff: >-
+    Entscheidend ist die Übergabe. Der Index findet eine Quelle, der passende Wrapper holt
+    ihre aktuellen Daten. Verweist die Antwort eines Wrappers auf ein Dokument, liefert der
+    Index es vollständig.
   more: Wie alles zusammenspielt
+
+surfaces:
+  title: Für Menschen und für Agenten
+  web_title: Im Browser
+  web_text: >-
+    Den Bestand im Web durchsuchen und jedes Dokument mit seiner Herkunft lesen.
+  cli_title: Auf der Kommandozeile
+  cli_text: >-
+    Ein Kommandozeilen-Tool pro API, auf npm, dazu Skills, mit denen Claude Code es
+    bedienen kann.
+  mcp_title: Für Agenten, über MCP
+  mcp_text: >-
+    Die Wrapper und die Suche als MCP-Tools: finden und abrufen über einen Endpunkt,
+    selbst betrieben oder bei uns gehostet.
 
 blog:
   title: Blog
-  intro: Neues über die Tools, Releases und die APIs dahinter.
+  intro: Notizen zum Suchindex, zu den Wrappern, zu Releases und den APIs dahinter.
   latest: Aus dem Blog
   all: Alle Beiträge
   back: Alle Beiträge
@@ -67,7 +89,7 @@ copy:
   failed: Kopieren fehlgeschlagen – bitte den Text markieren.
 
 footer:
-  tagline: Offene APIs aus Staat und Verwaltung auf der Kommandozeile.
+  tagline: Staat und Verwaltung, durchsuchbar und maschinenlesbar.
   plugins: Plugins für Claude Code
   feed: Atom-Feed
   license: AGPL-3.0-or-later oder kommerziell

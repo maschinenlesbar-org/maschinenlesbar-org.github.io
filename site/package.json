@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "description": "The maschinenlesbar.org landing page: Jekyll, banira web components, Fylgja CSS",
+  "description": "The maschinenlesbar.org website: Jekyll, banira web components, Fylgja CSS",
   "license": "AGPL-3.0-or-later",
   "type": "module",
   "engines": {

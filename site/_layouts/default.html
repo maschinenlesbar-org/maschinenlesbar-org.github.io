@@ -1,14 +1,5 @@
 <!doctype html>
-{%- assign t = site.data.i18n[page.lang] -%}
-{%- if page.lang == site.default_lang -%}
-  {%- assign home = '/' -%}
-  {%- assign plugins_home = site.plugins_url -%}
-{%- else -%}
-  {%- assign home = '/' | append: page.lang | append: '/' -%}
-  {%- assign plugins_home = site.plugins_url | append: page.lang | append: '/' -%}
-{%- endif -%}
-{%- assign blog_home = home | append: 'blog/' -%}
-{%- assign feed = home | append: 'feed.xml' -%}
+{%- include lang.html -%}
 {%- if page.ref -%}
   {%- assign alt_pages = site.pages | where: "ref", page.ref -%}
   {%- assign alt_posts = site.posts | where: "ref", page.ref -%}
@@ -21,7 +12,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ t.site.title }}</title>
-  <meta name="description" content="{{ page.description | default: page.excerpt | default: t.site.description | strip_html | normalize_whitespace | escape }}">
+  <meta name="description" content="{{ page.description | default: page.intro | default: page.excerpt | default: t.site.description | strip_html | normalize_whitespace | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   {%- for alt in alternates %}
   <link rel="alternate" hreflang="{{ alt.lang }}" href="{{ alt.url | absolute_url }}">
@@ -45,8 +36,13 @@
     <nav class="container" aria-label="{{ t.nav.label }}">
       <a class="brand" href="{{ home | relative_url }}">maschinenlesbar<span class="brand-tld">.org</span></a>
       <ul role="list">
-        <li><a href="{{ plugins_home }}">{{ t.nav.tools }}</a></li>
-        <li><a href="{{ blog_home | relative_url }}"{% if page.blog or page.layout == 'post' %} aria-current="page"{% endif %}>{{ t.nav.blog }}</a></li>
+        {%- for ref in site.data.nav %}
+        {%- assign item = site.pages | where: "ref", ref | where: "lang", page.lang | first %}
+        {%- assign current = false %}
+        {%- if page.ref == ref %}{% assign current = true %}{% endif %}
+        {%- if ref == "blog" and page.layout == "post" %}{% assign current = true %}{% endif %}
+        <li><a href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.nav | default: item.title }}</a></li>
+        {%- endfor %}
         <li><a href="https://github.com/{{ site.org }}">{{ t.nav.github }}</a></li>
         {%- for alt in alternates %}
         {%- unless alt.lang == page.lang %}

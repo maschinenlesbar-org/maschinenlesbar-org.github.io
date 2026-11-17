@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{%- comment -%}
+  A content page written in Markdown. Front matter: `title` (the <title> and the menu
+  label, unless `nav` is set), `heading` (the h1, else the title), `eyebrow`, `intro`
+  (also the meta description), `status` (a key for status.html).
+{%- endcomment -%}
+<article class="page flow">
+  <header class="hero flow">
+    {%- if page.eyebrow %}
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    {%- endif %}
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {%- if page.intro %}
+    <p class="intro">{{ page.intro }}</p>
+    {%- endif %}
+    {%- if page.status %}
+    <p>{% include status.html status=page.status %}</p>
+    {%- endif %}
+  </header>
+  <div class="prose flow">
+    {{ content }}
+  </div>
+</article>

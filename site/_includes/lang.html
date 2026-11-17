@@ -1,0 +1,17 @@
+{%- comment -%}
+  The language context of the current page, for a layout or an include:
+  `t` (the interface strings), `home` (this language's home page), `blog_home`, `feed`
+  and `plugins_home` (the plugin marketplace site in this language). Jekyll's include
+  shares the caller's scope, so the variables are set for the caller.
+  Usage: {% include lang.html %}
+{%- endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- if page.lang == site.default_lang -%}
+  {%- assign home = '/' -%}
+  {%- assign plugins_home = site.plugins_url -%}
+{%- else -%}
+  {%- assign home = '/' | append: page.lang | append: '/' -%}
+  {%- assign plugins_home = site.plugins_url | append: page.lang | append: '/' -%}
+{%- endif -%}
+{%- assign blog_home = home | append: 'blog/' -%}
+{%- assign feed = home | append: 'feed.xml' -%}

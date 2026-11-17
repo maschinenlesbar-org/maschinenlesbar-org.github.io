@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- assign t = site.data.i18n[page.lang] -%}
+{%- include lang.html -%}
 {%- assign posts = site.posts | where: "lang", page.lang -%}
 <section class="hero flow">
   <h1>{{ t.blog.title }}</h1>

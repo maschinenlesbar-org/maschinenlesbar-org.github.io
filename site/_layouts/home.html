@@ -1,32 +1,37 @@
 ---
 layout: default
 ---
-{%- assign t = site.data.i18n[page.lang] -%}
-{%- if page.lang == site.default_lang -%}
-  {%- assign plugins_home = site.plugins_url -%}
-  {%- assign blog_home = '/blog/' -%}
-{%- else -%}
-  {%- assign plugins_home = site.plugins_url | append: page.lang | append: '/' -%}
-  {%- assign blog_home = '/' | append: page.lang | append: '/blog/' -%}
-{%- endif -%}
+{%- include lang.html -%}
 {%- assign posts = site.posts | where: "lang", page.lang -%}
 {%- assign architecture = posts | where: "ref", "two-datasets-and-a-facade" | first -%}
+{%- assign search = site.pages | where: "ref", "search" | where: "lang", page.lang | first -%}
+{%- assign wrappers = site.pages | where: "ref", "wrappers" | where: "lang", page.lang | first -%}
 <section class="hero flow">
   <p class="eyebrow">{{ t.hero.eyebrow }}</p>
   <h1>{{ t.hero.title }}</h1>
   <p class="intro">{{ t.hero.intro }}</p>
+  <p class="lead">{{ t.hero.lead }}</p>
 </section>
 
-<section id="building" class="flow">
-  <h2>{{ t.offers.title }}</h2>
-  <ul role="list" class="links auto-grid gap">
-    <li class="card flow"><h3>{{ t.offers.datasets_title }}</h3><p class="meta">{{ t.offers.status }}</p><p>{{ t.offers.datasets_text }}</p></li>
-    <li class="card flow"><h3>{{ t.offers.search_title }}</h3><p class="meta">{{ t.offers.status }}</p><p>{{ t.offers.search_text }}</p></li>
-    <li class="card flow"><h3>{{ t.offers.classifiers_title }}</h3><p class="meta">{{ t.offers.status }}</p><p>{{ t.offers.classifiers_text }}</p></li>
+<section id="system" class="flow">
+  <h2>{{ t.halves.title }}</h2>
+  <ul role="list" class="cards halves auto-grid gap">
+    {% include card.html eyebrow=t.halves.search_question title=t.halves.search_title text=t.halves.search_text href=search.url status="making" %}
+    {% include card.html eyebrow=t.halves.wrappers_question title=t.halves.wrappers_title text=t.halves.wrappers_text href=wrappers.url status="available" %}
   </ul>
+  <p>{{ t.halves.handoff }}</p>
   {%- if architecture %}
-  <p><a href="{{ architecture.url | relative_url }}">{{ t.offers.more }}: {{ architecture.title | escape }} →</a></p>
+  <p><a href="{{ architecture.url | relative_url }}">{{ t.halves.more }}: {{ architecture.title | escape }} →</a></p>
   {%- endif %}
+</section>
+
+<section id="surfaces" class="flow">
+  <h2>{{ t.surfaces.title }}</h2>
+  <ul role="list" class="cards auto-grid gap">
+    {% include card.html title=t.surfaces.web_title text=t.surfaces.web_text href=search.url status="making" %}
+    {% include card.html title=t.surfaces.cli_title text=t.surfaces.cli_text href=plugins_home status="available" %}
+    {% include card.html title=t.surfaces.mcp_title text=t.surfaces.mcp_text href=wrappers.url status="making" %}
+  </ul>
 </section>
 
 <section id="blog" class="flow">
@@ -41,9 +46,11 @@ layout: default
 
 <section id="links" class="flow">
   <h2>{{ t.links.title }}</h2>
-  <ul role="list" class="links auto-grid gap">
-    <li class="card flow"><h3><a href="{{ plugins_home }}">{{ t.links.tools_title }}</a></h3><p>{{ t.links.tools_text }}</p></li>
-    <li class="card flow"><h3><a href="https://github.com/{{ site.org }}">{{ t.links.github_title }}</a></h3><p>{{ t.links.github_text }}</p></li>
-    <li class="card flow"><h3><a href="https://www.npmjs.com/org/{{ site.npm_scope }}">{{ t.links.npm_title }}</a></h3><p>{{ t.links.npm_text }}</p></li>
+  <ul role="list" class="cards auto-grid gap">
+    {% include card.html title=t.links.tools_title text=t.links.tools_text href=plugins_home %}
+    {%- capture github %}https://github.com/{{ site.org }}{% endcapture %}
+    {% include card.html title=t.links.github_title text=t.links.github_text href=github %}
+    {%- capture npm %}https://www.npmjs.com/org/{{ site.npm_scope }}{% endcapture %}
+    {% include card.html title=t.links.npm_title text=t.links.npm_text href=npm %}
   </ul>
 </section>

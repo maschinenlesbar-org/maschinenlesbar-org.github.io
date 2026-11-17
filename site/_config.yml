@@ -1,6 +1,7 @@
-# The maschinenlesbar.org website, served at the organisation root: a landing page and
-# a blog. Same stack as the plugin marketplace site and the CLI websites: Jekyll, banira
-# web components, Fylgja CSS. Built and deployed by .github/workflows/pages.yml.
+# The maschinenlesbar.org website, served at the organisation root: the home page, the
+# pages on the search index, the API wrappers and open source vs. service, and a blog.
+# Same stack as the plugin marketplace site and the CLI websites: Jekyll, banira web
+# components, Fylgja CSS. Built and deployed by .github/workflows/pages.yml.
 
 url: https://maschinenlesbar.org
 baseurl: ""

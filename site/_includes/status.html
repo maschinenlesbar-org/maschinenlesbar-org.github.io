@@ -1,0 +1,7 @@
+{%- comment -%}
+  A status badge: `available` or `making` (the keys under `status` in _data/i18n).
+  Include it with the parameter status="making" (or "available"), also in a page's Markdown.
+{%- endcomment -%}
+{%- assign status_label = site.data.i18n[page.lang].status[include.status] -%}
+<span class="badge status status-{{ include.status }}">{{ status_label | default: include.status }}</span>
+{%- comment -%} The tag above strips the trailing newline, which would make a Markdown list loose. {%- endcomment -%}

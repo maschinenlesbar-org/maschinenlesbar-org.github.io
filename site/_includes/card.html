@@ -1,0 +1,14 @@
+{%- comment -%}
+  One card in a `<ul role="list" class="cards auto-grid gap">`. Parameters: title and
+  text (required), href, eyebrow, and status (a key for status.html).
+{%- endcomment -%}
+<li class="card flow">
+  {%- if include.eyebrow %}
+  <p class="eyebrow">{{ include.eyebrow }}</p>
+  {%- endif %}
+  <h3>{% if include.href %}<a href="{{ include.href }}">{{ include.title }}</a>{% else %}{{ include.title }}{% endif %}</h3>
+  {%- if include.status %}
+  <p>{% include status.html status=include.status %}</p>
+  {%- endif %}
+  <p>{{ include.text }}</p>
+</li>
