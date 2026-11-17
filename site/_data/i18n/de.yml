@@ -38,10 +38,14 @@ halves:
     Volltext- und semantische Suche im öffentlichen deutschen Web, vom Bund bis zur
     Kommune. Jeder Treffer sagt, woher er stammt.
   wrappers_question: Was sagt die Quelle gerade?
-  wrappers_title: API-Wrapper
-  wrappers_text: >-
-    Ein Wrapper pro amtlicher API, alle nach derselben Vorlage gebaut: ein typisierter
-    Client, ein Kommandozeilen-Tool und als Nächstes ein MCP-Server.
+  cli_title: schland cli
+  cli_text: >-
+    Die API-Wrapper auf der Kommandozeile: ein Tool pro amtlicher API, für Menschen und
+    Skripte.
+  mcp_title: schland mcp
+  mcp_text: >-
+    Dieselben Wrapper als MCP-Tools, für Agenten. Gleicher Client, gleiche Befehle, gleiche
+    Antworten: Nehmen Sie, was passt.
   handoff: >-
     Entscheidend ist die Übergabe. Der Index findet eine Quelle, der passende Wrapper holt
     ihre aktuellen Daten. Verweist die Antwort eines Wrappers auf ein Dokument, liefert der

@@ -15,9 +15,10 @@ layout: default
 
 <section id="system" class="flow">
   <h2>{{ t.halves.title }}</h2>
-  <ul role="list" class="cards halves auto-grid gap">
+  <ul role="list" class="cards auto-grid gap">
     {% include card.html eyebrow=t.halves.search_question title=t.halves.search_title text=t.halves.search_text href=search.url status="making" %}
-    {% include card.html eyebrow=t.halves.wrappers_question title=t.halves.wrappers_title text=t.halves.wrappers_text href=wrappers.url status="available" %}
+    {% include card.html eyebrow=t.halves.wrappers_question title=t.halves.cli_title text=t.halves.cli_text href=wrappers.url status="available" %}
+    {% include card.html eyebrow=t.halves.wrappers_question title=t.halves.mcp_title text=t.halves.mcp_text href=wrappers.url status="making" %}
   </ul>
   <p>{{ t.halves.handoff }}</p>
   {%- if architecture %}

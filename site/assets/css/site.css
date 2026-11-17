@@ -165,11 +165,6 @@ main > section > copy-command + copy-command {
   padding: 0;
 }
 
-.cards.halves {
-  --max-col-size: 24rem;
-  max-inline-size: 52rem;
-}
-
 .cards h3 {
   font-size: 1.1rem;
 }

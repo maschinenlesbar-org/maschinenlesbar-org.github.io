@@ -38,10 +38,14 @@ halves:
     Full-text and semantic search across the German public web, federal to municipal. Every
     hit says where it comes from.
   wrappers_question: What does the source say right now?
-  wrappers_title: API wrappers
-  wrappers_text: >-
-    One wrapper per official API, all built to the same template: a typed client, a
-    command-line tool, and next an MCP server.
+  cli_title: schland cli
+  cli_text: >-
+    The API wrappers on the command line: one tool per official API, for people and
+    scripts.
+  mcp_title: schland mcp
+  mcp_text: >-
+    The same wrappers as MCP tools, for agents. Same client, same commands, same answers:
+    use whichever fits.
   handoff: >-
     The handoff is the point. The index finds a source, and the matching wrapper fetches
     its live data. When a wrapper's answer cites a document, the index has it in full.
