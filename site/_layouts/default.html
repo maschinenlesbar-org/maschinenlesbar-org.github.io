@@ -7,13 +7,37 @@
 {%- else -%}
   {%- assign alternates = "" | split: "" -%}
 {%- endif -%}
+{%- comment -%}
+  The document title, description and link-preview image. Front matter can set
+  `seo_title` (the <title> and og:title, when the visible title is not what people search
+  for), `description` (else the page's intro or excerpt), `image` (else the language's
+  default preview) and `robots` (e.g. noindex).
+{%- endcomment -%}
+{%- if page.title -%}
+  {%- assign share_title = page.seo_title | default: page.title -%}
+  {%- assign doc_title = share_title | append: ' — ' | append: t.site.title -%}
+{%- else -%}
+  {%- assign share_title = t.site.home_title -%}
+  {%- assign doc_title = t.site.home_title -%}
+{%- endif -%}
+{%- if page.layout == "blog" -%}
+  {%- assign desc = t.blog.intro -%}
+{%- else -%}
+  {%- assign desc = page.description | default: page.intro | default: page.excerpt | default: t.site.description -%}
+{%- endif -%}
+{%- assign desc = desc | strip_html | normalize_whitespace -%}
+{%- assign image = page.image | default: t.site.image | absolute_url -%}
 <html lang="{{ page.lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ t.site.title }}</title>
-  <meta name="description" content="{{ page.description | default: page.intro | default: page.excerpt | default: t.site.description | strip_html | normalize_whitespace | escape }}">
+  <title>{{ doc_title | escape }}</title>
+  <meta name="description" content="{{ desc | escape }}">
+  {%- if page.robots %}
+  <meta name="robots" content="{{ page.robots }}">
+  {%- else %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {%- endif %}
   {%- for alt in alternates %}
   <link rel="alternate" hreflang="{{ alt.lang }}" href="{{ alt.url | absolute_url }}">
   {%- if alt.lang == site.default_lang %}
@@ -21,7 +45,33 @@
   {%- endif %}
   {%- endfor %}
   <link rel="alternate" type="application/atom+xml" title="{{ t.blog.feed_title | escape }}" href="{{ feed | absolute_url }}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b5e8e'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='white'>&gt;_</text></svg>">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  <meta property="og:site_name" content="{{ t.site.title }}">
+  <meta property="og:title" content="{{ share_title | escape }}">
+  <meta property="og:description" content="{{ desc | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:locale" content="{{ t.site.locale }}">
+  {%- for alt in alternates %}
+  {%- unless alt.lang == page.lang %}
+  <meta property="og:locale:alternate" content="{{ site.data.i18n[alt.lang].site.locale }}">
+  {%- endunless %}
+  {%- endfor %}
+  {%- if page.collection == "posts" %}
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  {%- else %}
+  <meta property="og:type" content="website">
+  {%- endif %}
+  <meta property="og:image" content="{{ image }}">
+  {%- unless page.image %}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {%- endunless %}
+  <meta property="og:image:alt" content="{{ page.image_alt | default: t.site.image_alt | escape }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- include structured-data.html %}
   {%- assign sheets = "tokens,base,theme,utilities,card,badge" | split: "," %}
   {%- for sheet in sheets %}
   <link rel="stylesheet" href="{{ '/assets/vendor/fylgja/' | append: sheet | append: '.css' | relative_url }}">

@@ -6,6 +6,7 @@ title: API wrappers
 nav: Wrappers
 eyebrow: API wrappers
 heading: What does the source say right now?
+description: "Open-source wrappers around official German public-sector APIs: a typed client, a command-line tool and an MCP server per API."
 intro: >-
   The official APIs of the German public sector are documented unevenly, each one works
   differently, and they change often. A wrapper absorbs one API's quirks and changes behind

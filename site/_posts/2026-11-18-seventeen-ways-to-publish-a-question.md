@@ -1,6 +1,10 @@
 ---
 title: Seventeen ways to publish a question
 ref: kleine-anfragen-landscape
+seo_title: "Kleine Anfragen: 17 parliaments, 17 systems, and why openka exists"
+description: >-
+  How Germany's 17 parliaments publish Kleine Anfragen, why kleineAnfragen.de gave up in
+  2020, and how openka uses automation to keep up.
 ---
 
 In January 2021 netzpolitik.org interviewed Maximilian Richt about the end of kleineAnfragen.de, the site he had run for five years. The headline was a quote of his: [„Die Lösung zu all unseren Problemen könnte in PDFs schlummern, die niemand liest“](https://netzpolitik.org/2021/zum-ende-von-kleineanfragen-de-die-loesung-zu-all-unseren-problemen-koennte-in-pdfs-schlummern-die-niemand-liest/), the solution to all our problems could be sleeping in PDFs nobody reads. openka started with that interview.

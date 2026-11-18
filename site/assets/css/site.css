@@ -276,6 +276,10 @@ main > section > copy-command + copy-command {
   font-size: 1.075rem;
 }
 
+.post-body img {
+  height: auto;
+}
+
 .post-body pre {
   white-space: pre-wrap;
   overflow-wrap: anywhere;

@@ -6,6 +6,7 @@ title: API-Wrapper
 nav: Wrapper
 eyebrow: API-Wrapper
 heading: Was sagt die Quelle gerade?
+description: "Quelloffene Wrapper um die amtlichen APIs von Staat und Verwaltung: pro API ein typisierter Client, ein Kommandozeilen-Tool und ein MCP-Server."
 intro: >-
   Die amtlichen APIs von Staat und Verwaltung sind ungleich dokumentiert, jede funktioniert
   anders, und sie ändern sich oft. Ein Wrapper fängt die Eigenheiten und Änderungen einer

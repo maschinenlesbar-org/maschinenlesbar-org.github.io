@@ -1,0 +1,25 @@
+---
+# The page GitHub Pages serves for a missing URL on maschinenlesbar.org. It can appear at
+# any path, so every link in it is root-absolute. In both languages, since the path says
+# nothing about the reader's. Not indexed, not in the sitemap.
+layout: default
+lang: en
+title: Page not found
+permalink: /404.html
+robots: noindex
+sitemap: false
+---
+{%- assign en = site.data.i18n.en.notfound -%}
+{%- assign de = site.data.i18n.de.notfound -%}
+<section class="hero flow">
+  <p class="eyebrow">404</p>
+  <h1>{{ en.title }}</h1>
+  <p class="intro">{{ en.text }}</p>
+  <p class="link-row"><a href="{{ '/' | relative_url }}">{{ en.home }} →</a> <a href="{{ site.plugins_url }}">{{ en.tools }} →</a></p>
+</section>
+
+<section class="hero flow" lang="de">
+  <h2>{{ de.title }}</h2>
+  <p class="intro">{{ de.text }}</p>
+  <p class="link-row"><a href="{{ '/de/' | relative_url }}">{{ de.home }} →</a> <a href="{{ site.plugins_url }}de/">{{ de.tools }} →</a></p>
+</section>

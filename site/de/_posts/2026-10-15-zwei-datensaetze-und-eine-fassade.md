@@ -1,6 +1,10 @@
 ---
 title: Zwei Datensätze und eine Fassade
 ref: two-datasets-and-a-facade
+seo_title: "Zwei Datensätze und eine Fassade: ein Crawler für das öffentliche deutsche Web"
+description: >-
+  Die Architektur eines Crawlers für rund 12.000 Quellen aus Staat und Verwaltung:
+  URL-Index, Inhaltsdatensatz, Archiv und eine Such-API davor.
 ---
 
 Ich modelliere einen Crawler für das öffentliche deutsche Web. Rund 12.000 Quellen: Bundestag, Bundesrat, Behörden, Kommunen, die offiziellen Seiten von Amtsträgern. Nicht ihre privaten Accounts und keine allgemeinen Medien; diese Grenze wird auf Host-Ebene gezogen und nirgends sonst. Die Überschlagsrechnung sagt 200 Millionen URLs in fünf Jahren, im Schnitt etwas über 100.000 am Tag.
@@ -15,7 +19,7 @@ Das Archiv nimmt dasselbe „abgerufen"-Ereignis wie der Indexer und speichert e
 
 Zwischen diesen Datensätzen und dem Dienst sitzt eine Suchmaschine. Langweiliger Name, mit Absicht. Sie nimmt den Inhaltsdatensatz und den URL-Index inkrementell auf, baut ihren eigenen Index (heute OpenSearch, morgen was auch immer), hält eine abfragbare Projektion des URL-Index und bietet genau eine API an: `search_content`, `get_document`, `search_urls`, `source_info`. Hybride Suche, Facetten, Stichtagsabfragen. Nichts auf der Seite des Dienstes hat einen Connection-String zu irgendetwas, das der Pipeline gehört.
 
-![Systemkontext der Search App (SaaS): Recherchierende und MCP-Clients nutzen die Search App; sie erreicht Crawl- und Inhaltsdaten nur über die Fassade der Suchmaschine (search_content, search_urls, get_document), liest Snapshots aus dem Archiv, ruft die offenen APIs aus Staat und Verwaltung hinter maschinenlesbar.org auf und bezieht Completions von einem Modellanbieter, den die Kundschaft selbst mitbringt.]({{ '/assets/img/2026-10-15-search-app-context.png' | relative_url }})
+![Systemkontext der Search App (SaaS): Recherchierende und MCP-Clients nutzen die Search App; sie erreicht Crawl- und Inhaltsdaten nur über die Fassade der Suchmaschine (search_content, search_urls, get_document), liest Snapshots aus dem Archiv, ruft die offenen APIs aus Staat und Verwaltung hinter maschinenlesbar.org auf und bezieht Completions von einem Modellanbieter, den die Kundschaft selbst mitbringt.]({{ '/assets/img/2026-10-15-search-app-context.png' | relative_url }}){: width="2612" height="1025" loading="lazy"}
 
 Der Dienst selbst ist zum Recherchieren und Ansehen da. Eine Web-Oberfläche, ein WebMCP-Endpunkt für Agenten im Browser, ein entfernter MCP-Server und ein Recherche-Agent, der mit dem eigenen Modell der Kundschaft läuft (bring your own, wir liefern keins mit). Der MCP-Server trägt die [33 Plugins von maschinenlesbar.org](https://maschinenlesbar.org/plugins/de/), als MCP-Tools portiert und nach Bereichen gruppiert (Parlament und Transparenz, Statistik, Warnungen, Energie, Arbeit, ein Nachrichten-Tool, das nur Tool ist, die Tagesschau wird nicht gecrawlt), dazu eine Handvoll eigener Tools über unsere eigenen Daten. Die eigenen Tools sind eine dünne Hülle um die Fassade. Ist die Fassade gut, sind die Tools gut.
 

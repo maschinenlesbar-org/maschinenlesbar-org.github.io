@@ -1,6 +1,10 @@
 ---
 title: Siebzehn Arten, eine Frage zu veröffentlichen
 ref: kleine-anfragen-landscape
+seo_title: "Kleine Anfragen: 17 Parlamente, 17 Systeme – und warum es openka gibt"
+description: >-
+  Wie die 17 Parlamente in Deutschland Kleine Anfragen veröffentlichen, warum
+  kleineAnfragen.de 2020 aufgab und wie openka mit Automatisierung mithält.
 ---
 
 Im Januar 2021 hat netzpolitik.org mit Maximilian Richt über das Ende von kleineAnfragen.de gesprochen, der Seite, die er fünf Jahre lang betrieben hatte. Die Überschrift war ein Satz von ihm: [„Die Lösung zu all unseren Problemen könnte in PDFs schlummern, die niemand liest“](https://netzpolitik.org/2021/zum-ende-von-kleineanfragen-de-die-loesung-zu-all-unseren-problemen-koennte-in-pdfs-schlummern-die-niemand-liest/). Mit diesem Interview hat openka angefangen.

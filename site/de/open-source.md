@@ -5,6 +5,7 @@ ref: open-source
 title: Open Source
 eyebrow: Open Source und Dienst
 heading: Der Code ist offen. Was wir daraus gewinnen, ist ein Dienst.
+description: "Was bei maschinenlesbar.org quelloffen ist (die API-Wrapper, AGPL oder kommerziell) und was ein Dienst ist (Datensatz, Suche, gehostetes MCP)."
 intro: >-
   Der Code, der öffentliche Schnittstellen anbindet, ist quelloffen. Was wir aus dem
   öffentlichen Web gewinnen – die kuratierten Quellen, den Index und die Suche darüber –

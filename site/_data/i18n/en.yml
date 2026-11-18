@@ -6,9 +6,14 @@ name: English
 site:
   title: maschinenlesbar.org
   description: >-
-    A search index over around 12,000 German public-sector sources, and open-source
-    wrappers around the official APIs: for people on the web and the command line, for
-    agents over MCP.
+    A search index over 12,000 German public-sector sources and open-source wrappers for
+    the official APIs: on the web, the command line and over MCP.
+  # The home page's <title>, the locale for Open Graph, and the default link-preview image
+  # (rendered from scripts/social-image.html).
+  home_title: "maschinenlesbar.org: German public-sector information, searchable and machine-readable"
+  locale: en_US
+  image: /assets/img/social-en.png
+  image_alt: "maschinenlesbar.org: German public-sector information, searchable and machine-readable."
 
 nav:
   label: Main
@@ -84,6 +89,14 @@ links:
   github_text: The source code of every tool, its issues and its releases.
   npm_title: npm
   npm_text: "Every tool as an npm package under <code>@maschinenlesbar.org</code>."
+
+notfound:
+  title: Page not found
+  text: >-
+    There is nothing at this address. The page may have moved, or the link may have a typo
+    in it.
+  home: maschinenlesbar.org home page
+  tools: Every tool and its website
 
 copy:
   label: Copy

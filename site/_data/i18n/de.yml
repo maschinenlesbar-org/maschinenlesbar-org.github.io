@@ -6,9 +6,12 @@ name: Deutsch
 site:
   title: maschinenlesbar.org
   description: >-
-    Ein Suchindex über rund 12.000 Quellen aus Staat und Verwaltung und quelloffene
-    Wrapper um die amtlichen APIs – für Menschen im Web und auf der Kommandozeile, für
-    Agenten über MCP.
+    Ein Suchindex über 12.000 Quellen aus Staat und Verwaltung und quelloffene Wrapper um
+    die amtlichen APIs: im Web, auf der Kommandozeile und über MCP.
+  home_title: "maschinenlesbar.org: Staat und Verwaltung, durchsuchbar und maschinenlesbar"
+  locale: de_DE
+  image: /assets/img/social-de.png
+  image_alt: "maschinenlesbar.org: Staat und Verwaltung, durchsuchbar und maschinenlesbar."
 
 nav:
   label: Hauptnavigation
@@ -86,6 +89,14 @@ links:
   github_text: Der Quellcode jedes Tools, seine Issues und seine Releases.
   npm_title: npm
   npm_text: "Jedes Tool als npm-Paket unter <code>@maschinenlesbar.org</code>."
+
+notfound:
+  title: Seite nicht gefunden
+  text: >-
+    Unter dieser Adresse gibt es nichts. Vielleicht ist die Seite umgezogen, oder der Link
+    enthält einen Tippfehler.
+  home: Startseite von maschinenlesbar.org
+  tools: Alle Tools und ihre Websites
 
 copy:
   label: Kopieren

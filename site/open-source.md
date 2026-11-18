@@ -5,6 +5,7 @@ ref: open-source
 title: Open source
 eyebrow: Open source and service
 heading: The code is open. What we derive from it is a service.
+description: "What is open source at maschinenlesbar.org (the API wrappers, AGPL or commercial) and what is a service (dataset, search, hosted MCP)."
 intro: >-
   The code that wraps public endpoints is open source. What we derive from the public web,
   the curated sources, the index and the search over it, and running all of it for you, is

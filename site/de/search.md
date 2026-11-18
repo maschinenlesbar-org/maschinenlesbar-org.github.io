@@ -5,6 +5,7 @@ ref: search
 title: Suche
 eyebrow: Suchindex
 heading: Wo steht das? In 12.000 öffentlichen Quellen.
+description: "Ein gepflegter Suchindex über rund 12.000 Quellen aus Staat und Verwaltung, vom Bundestag bis zur Gemeinde, für Menschen und Agenten."
 intro: >-
   Ein gepflegter Index des öffentlichen deutschen Webs, vom Bundestag bis zur einzelnen
   Gemeinde: durchsuchbar für Menschen im Browser und für Agenten über MCP.

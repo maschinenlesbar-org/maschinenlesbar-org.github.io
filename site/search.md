@@ -5,6 +5,7 @@ ref: search
 title: Search
 eyebrow: Search index
 heading: Where is it? Across 12,000 public sources.
+description: "A maintained search index over around 12,000 German public-sector sources, from the Bundestag to municipalities, for people and agents."
 intro: >-
   A maintained index of the German public web, from the Bundestag down to individual
   municipalities: searchable by people in the browser and by agents over MCP.

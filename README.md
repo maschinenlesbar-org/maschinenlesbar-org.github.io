@@ -34,6 +34,13 @@ site/de/_posts/             German posts
 site/feed.xml, site/de/     the two Atom feeds (front matter only)
 site/sitemap.xml            this site's sitemap: every page and every post
 site/robots.txt             robots.txt for all of maschinenlesbar.org, with every site's sitemap
+site/404.html               the not-found page for the whole domain (both languages, noindex)
+site/favicon.*, site/apple-touch-icon.png
+                            the icons, also for every other site under the domain
+site/assets/img/social-*.png the default link previews (1200×630); their source and how to
+                            render them: site/scripts/social-image.html
+site/_includes/structured-data.html
+                            schema.org JSON-LD: Organization + WebSite, BlogPosting
 site/_data/sites.yml        the other sites under the domain (plugins, every CLI): a new CLI gets a line
 site/components/*.ts        banira web components: <copy-command>
 site/assets/css/site.css    site styles on top of Fylgja
@@ -64,7 +71,8 @@ status: making            # optional, a badge: available | making
 - **An item**: its text. {% include status.html status="available" %}
 ```
 
-To put it in the menu, add its `ref` to `site/_data/nav.yml`. The build fails if either
+`description` (at most ~155 characters), `seo_title` and `image` work as for posts. To put
+it in the menu, add its `ref` to `site/_data/nav.yml`. The build fails if either
 language lacks the page. A new status is a new key under `status` in both i18n files.
 
 ## Writing a post
@@ -77,6 +85,9 @@ An English post is `site/_posts/YYYY-MM-DD-slug.md`, its German translation
 ---
 title: Hello, world
 ref: hello-world
+seo_title: "Hello, world: what search engines and link previews show"   # optional
+description: One sentence of at most ~155 characters for search results.  # recommended
+image: /assets/img/a-1200x630-preview.png                                # optional
 ---
 
 The first paragraph is the excerpt on the blog index, the home page and in the feed.
