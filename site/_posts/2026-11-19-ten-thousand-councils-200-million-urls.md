@@ -7,38 +7,40 @@ description: >-
   crawling every URL, ranking the link graph and storing URLs as more than strings.
 ---
 
-Germany has a little under 11,000 municipalities. Each has a council, committees, councillors, parties, a gazette, press releases and usually a council information system that puts every meeting, agenda item and document online. Over one term, five years in most Länder, that easily adds up to 200 million URLs. This post is about why, and about what that number does to the [search index]({{ '/search/' | relative_url }}).
+Germany has just under 11,000 municipalities. Each has a council, committees, councilors, parties, a gazette, press releases, and, in most cases, a council information system that makes every meeting, agenda item, and document available online. Over one term, or five years in most Länder, this quickly sums up to 200 million URLs. This page explains why and how that number affects the [search index]({{ '/search/' | relative_url }}).
 
-## Nobody tells you what is there
+## Nobody tells you what's there
 
-The polite way to learn what a website holds is to ask it. A sitemap lists its pages, an RSS feed lists what is new. In politics neither is used consistently. Some councils have a sitemap that stops at the homepage, some have a feed for press releases but not for council papers, most have neither.
+The courteous method to find out what a website contains is to ask it. A sitemap lists the pages, whereas an RSS feed lists what's new. In politics, neither is employed uniformly. Some councils have a sitemap that just goes to the homepage, while others have a feed for press releases but not council papers, and the majority have neither.
 
-A binding standard doesn't exist. There is [OParl](https://oparl.org/), the open API for council information systems, and it is good. It is also voluntary. [oparl-cli](https://maschinenlesbar.org/oparl-cli/) knows about 170 OParl servers, around 150 of which worked at their last check. Against 11,000 municipalities, that is a rounding error.
+A binding standard does not exist. There is [OParl](https://oparl.org/), an open API for council information systems, which is excellent. It is also voluntary. [oparl-cli](https://maschinenlesbar.org/oparl-cli/) knows around 170 OParl servers, approximately 150 of which were operational at the last check. This is a rounding error compared to 11,000 municipalities.
 
-So the only way to know what is there is to look. We need to build a web site indexer: for every municipality, every one of its politicians, parties and committees, every document.
+So, the only way to find out what's there is to look. We need to create a website indexer for each municipality, its lawmakers, parties, and committees, as well as every document.
 
-## Where 200 million comes from
+## Where does 200 million come from?
 
-200 million over 10,000 municipalities is 20,000 URLs each per term, about eleven a day. That sounds like a lot until you count a single council.
+200 million across 10,000 towns equals 20,000 URLs per term, or around eleven per day. That seems like a lot until you consider a single council.
 
-Take a mid-sized town with ten committees that meet eight times a year. That is 400 meetings per term. Each meeting has a page, an agenda, a dozen agenda items with a page each, two or three documents per item with a page and a file each, minutes and a print view. Call it 60 URLs per meeting, 24,000 for the meetings alone. Then come the councillors, the parties and Fraktionen, the gazette, the press releases, the town's own pages.
+Consider a medium-sized town with ten committees that meet eight times per year. That equals 400 meetings per term. Each meeting has a page, an agenda, a dozen agenda items with one page each, two or three documents with one page and one file each, minutes, and a print view. Call it 60 URLs per meeting, or 24,000 for the meetings alone. Then there are the councilors, the parties and Fraktionen, the gazette, the press releases, and the town's pages.
 
-And then the URLs nobody meant to make. The same document under a second address with a session id. The same list sorted five ways. A calendar with a page for every month back to 2004 and forward to 2099. Search result pages, one for every query anyone, or any crawler, ever typed. These are often the majority, and none of them is worth reading.
+And then there are the URLs that no one intended to create. The same document is served from a second address with a session id. The same list sorted five times. A calendar with one page for each month from 2004 to 2099. Search results pages, one for each query entered by anyone or any crawler. These are frequently the majority, and none are worth reading.
 
-## We need all of them, to throw most away
+## We need all of them, to toss the majority away
 
-To sort out the bad ones, we first need to have seen them. The [page-type classifier]({% post_url 2026-10-15-two-datasets-and-a-facade %}) decides per page whether it is a document or a listing, a calendar or a search result. A single page often doesn't say. Its neighbourhood does.
+To sort out the bad ones, we first need to see them. The [page-type classifier]({% post_url 2026-10-15-two-datasets-and-a-facade %}) determines if each page is a document, listing, calendar, or search result. A single page rarely says anything. Its neighbors do.
 
-Surprisingly enough, we will code a PageRank for this. Which page links to which other page tells you a lot: a council paper is linked from an agenda, a committee page and a councillor's profile. A search result page is linked from nothing stable, only from other search result pages. A calendar month links to the next one, forever. The link graph is how a crawler tells the town's archive from the town's infinite corridors.
+Surprisingly, we will implement a PageRank for this. Which page relates to which other page reveals a lot: a council paper is linked from an agenda, a committee page, and a councilor's profile. A search result page is linked from nothing stable but other search result sites. A calendar month continues to the next indefinitely. The link graph is how a crawler tells the town's archive from its limitless corridors.
 
-That means storing the edges too: which URL links to which, and when we saw it. In September I [asked how to store 200 million URLs](https://sebs.maschinenlesbar.org/2026/09/15/200-million-urls-please/) and called the link structure optional. It isn't.
+That also includes storing the edges: which URLs link to which and when we saw them. In September, I [asked how to store 200 million URLs](https://sebs.maschinenlesbar.org/2026/09/15/200-million-urls-please/) and labeled the link structure optional. It's not.
 
-## Ideas for a solution
+## Suggestions for a solution
 
-**A URL is not a string, so don't store it as one.** A heavily normalised schema splits each URL into its parts: scheme, host, path segments, query parameters as key–value pairs. Every host, every path segment and every parameter value is stored once and referenced. Most URLs of a council share their host and most of their path, so this is also compression. It makes the useful questions cheap: every URL on this host with a `sort` parameter, every URL whose path starts with `/sitzung/`, every host below `muenchen.de`. And when the classifier decides that one parameter makes search result pages, a whole family of URLs goes in one statement.
+**A URL is not a string, so do not save it as one.** A heavily normalized schema divides each URL into its constituent parts: scheme, host, path segments, and query parameters, which are represented as key-value pairs.
 
-The parameter order gets normalised on the way in. `?a=1&b=2` and `?b=2&a=1` are the same page on almost every site, so they should be the same row.
+Every host, path segment, and parameter value is only stored once and can be referenced. The majority of a council's URLs share the same host and path, so this is also compression. It makes useful questions cheap: every URL on this host with a `sort` parameter, every URL whose path begins with `/sitzung/`, and every host below `muenchen.de`. When the classifier determines that one parameter generates search result pages, it drops an entire family of URLs in a single statement.
 
-**Maybe a URL type of our own.** PostgreSQL lets an extension define a type and [teach the indexes how to order it](https://www.postgresql.org/docs/current/xindex.html), through an operator class. A URL type whose order is the host's labels reversed (`de.muenchen.risi`), then the path, then the sorted query would turn "this domain and all its subdomains" and "this path and everything below it" into range scans on one index. There is prior art ([pguri](https://github.com/petere/pguri)), but it orders URLs as text. Whether the normalised tables are enough, or whether this is worth doing ourselves, is what the measurements will say.
+The parameter order is normalized on the way in. `?a=1&b=2` and `?b=2&a=1` refer to the same page on practically every website, thus they should be the same row.
 
-None of this is built yet. The numbers above are estimates, and I'll report the real ones when the crawler has run for a while.
+**Maybe we can create our own URL type.** PostgreSQL allows an extension to specify a type and [teach the indexes how to organize it](https://www.postgresql.org/docs/current/xindex.html) using an operator class. A URL type with the host's labels reversed (`de.muenchen.risi`), then the path, followed by the sorted query, would convert "this domain and all its subdomains" and "this path and everything below it" into range scans on the same index. There is prior art ([pguri](https://github.com/petere/pguri)), but it orders URLs as text. The measurements will tell us whether the normalized tables are sufficient or whether we should do this ourselves.
+
+The normalized schema is built; the URL type, the PageRank and the crawler are not yet. The numbers above are estimations; I'll give the actual ones when the crawler has run for a while.

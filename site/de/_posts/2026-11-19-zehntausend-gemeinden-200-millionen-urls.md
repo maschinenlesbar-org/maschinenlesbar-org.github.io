@@ -42,4 +42,4 @@ Die Reihenfolge der Parameter wird beim Einlesen normalisiert. `?a=1&b=2` und `?
 
 **Vielleicht ein eigener URL-Typ.** PostgreSQL erlaubt einer Erweiterung, einen Typ zu definieren und [den Indexen beizubringen, wie er sortiert wird](https://www.postgresql.org/docs/current/xindex.html), über eine Operatorklasse. Ein URL-Typ, der nach den umgedrehten Labels des Hosts sortiert (`de.muenchen.risi`), dann nach dem Pfad, dann nach der sortierten Query, würde „diese Domain und alle Subdomains“ und „dieser Pfad und alles darunter“ zu Bereichsabfragen auf einem Index machen. Es gibt Vorarbeiten ([pguri](https://github.com/petere/pguri)), die URLs aber als Text sortieren. Ob die normalisierten Tabellen reichen oder ob sich das Selbermachen lohnt, werden die Messungen zeigen.
 
-Nichts davon ist schon gebaut. Die Zahlen oben sind Schätzungen, und ich berichte die echten, wenn der Crawler eine Weile gelaufen ist.
+Das normalisierte Schema steht; der URL-Typ, der PageRank und der Crawler noch nicht. Die Zahlen oben sind Schätzungen, und ich berichte die echten, wenn der Crawler eine Weile gelaufen ist.
