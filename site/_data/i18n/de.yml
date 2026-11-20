@@ -47,8 +47,8 @@ halves:
     Skripte.
   mcp_title: schland mcp
   mcp_text: >-
-    Dieselben Wrapper als MCP-Tools, für Agenten. Gleicher Client, gleiche Befehle, gleiche
-    Antworten: Nehmen Sie, was passt.
+    Die Wrapper als MCP-Server, für Agenten: Tools für die Fragen, die ein Agent stellt, auf
+    demselben Client wie die CLI.
   handoff: >-
     Entscheidend ist die Übergabe. Der Index findet eine Quelle, der passende Wrapper holt
     ihre aktuellen Daten. Verweist die Antwort eines Wrappers auf ein Dokument, liefert der
@@ -66,8 +66,9 @@ surfaces:
     bedienen kann.
   mcp_title: Für Agenten, über MCP
   mcp_text: >-
-    Die Wrapper und die Suche als MCP-Tools: finden und abrufen über einen Endpunkt,
-    selbst betrieben oder bei uns gehostet.
+    Ein MCP-Server pro API, auf npm und als Container-Image, zum Selbstbetrieb. Als
+    Nächstes folgen das Such-Tool und gehostete Server: finden und abrufen über einen
+    Endpunkt.
 
 blog:
   title: Blog

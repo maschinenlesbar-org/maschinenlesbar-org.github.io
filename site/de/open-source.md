@@ -15,7 +15,7 @@ intro: >-
 ## Open Source
 
 - **Jeder API-Wrapper**: der Client, das Kommandozeilen-Tool, seine Skills für Claude
-  Code und die kommenden MCP-Server. Lizenziert unter der
+  Code und sein MCP-Server mit dem Container-Image. Lizenziert unter der
   [AGPL-3.0-or-later](https://www.gnu.org/licenses/agpl-3.0.html): Selbst betreiben ist
   kostenlos; wer eine veränderte Fassung als Netzwerkdienst anbietet, legt die Änderungen
   offen.

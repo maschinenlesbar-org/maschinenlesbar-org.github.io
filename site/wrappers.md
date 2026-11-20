@@ -18,9 +18,10 @@ intro: >-
 Every wrapper is built to the same template. A typed client does the real integration
 work: requests, retries on `429` and `503` that honour `Retry-After`, timeouts, input
 checks, error mapping, and credentials that never leave their host. Thin layers sit on
-top: a command-line tool for people and an MCP server for agents. Because both share the
-client, a command and its options map directly onto an MCP tool and its input schema, so
-each further wrapper costs little.
+top: a command-line tool for people and an MCP server for agents. Both share the client,
+and the use cases live there too: the MCP tools answer the questions an agent asks (a
+politician's voting record, the weather warnings for a place) next to the plain lookups.
+So each further wrapper costs little.
 
 ## Three ways to use one
 
@@ -28,10 +29,30 @@ each further wrapper costs little.
   {% include status.html status="available" %}
 - **Command-line tool**: one per API, with Claude Code skills that teach Claude to use it.
   {% include status.html status="available" %}
-- **MCP server**: the same commands as MCP tools, also as a container image to run
-  yourself. {% include status.html status="making" %}
+- **MCP server**: tools for the questions agents ask, on npm and as a container image to run
+  yourself. {% include status.html status="available" %}
 
 No runtime HTTP dependencies: everything is built on Node.js itself.
+
+## Running an MCP server
+
+Every wrapper's server is an npm package, `@maschinenlesbar.org/<api>-mcp`, and a
+multi-arch container image, `ghcr.io/{{ site.org }}/<api>-mcp`. It speaks MCP on stdio, or
+over Streamable HTTP when you start it with `--transport http`. For the FIM Portal API,
+in Claude Code:
+
+```sh
+npm i -g @maschinenlesbar.org/fim-portal-mcp
+claude mcp add fim-portal -- fim-portal-mcp
+# or, with nothing installed but Docker:
+claude mcp add fim-portal -- docker run -i --rm ghcr.io/{{ site.org }}/fim-portal-mcp:latest
+```
+
+Each API's page in the [tool list]({{ site.plugins_url }}#mcp) has the commands for its
+server, and the `MCP.md` in its repository covers other clients, the options and any
+credentials. Releases can't be changed once published; each one carries SBOMs for the
+package and the image, and the image's provenance is signed, so
+`gh attestation verify` can check it against the release that built it.
 
 ## The wrappers today
 

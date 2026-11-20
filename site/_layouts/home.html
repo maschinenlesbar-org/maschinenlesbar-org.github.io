@@ -18,7 +18,7 @@ layout: default
   <ul role="list" class="cards auto-grid gap">
     {% include card.html eyebrow=t.halves.search_question title=t.halves.search_title text=t.halves.search_text href=search.url status="making" %}
     {% include card.html eyebrow=t.halves.wrappers_question title=t.halves.cli_title text=t.halves.cli_text href=wrappers.url status="available" %}
-    {% include card.html eyebrow=t.halves.wrappers_question title=t.halves.mcp_title text=t.halves.mcp_text href=wrappers.url status="making" %}
+    {% include card.html eyebrow=t.halves.wrappers_question title=t.halves.mcp_title text=t.halves.mcp_text href=wrappers.url status="available" %}
   </ul>
   <p>{{ t.halves.handoff }}</p>
   {%- if architecture %}
@@ -31,7 +31,8 @@ layout: default
   <ul role="list" class="cards auto-grid gap">
     {% include card.html title=t.surfaces.web_title text=t.surfaces.web_text href=search.url status="making" %}
     {% include card.html title=t.surfaces.cli_title text=t.surfaces.cli_text href=plugins_home status="available" %}
-    {% include card.html title=t.surfaces.mcp_title text=t.surfaces.mcp_text href=wrappers.url status="making" %}
+    {%- assign plugins_mcp = plugins_home | append: '#mcp' %}
+    {% include card.html title=t.surfaces.mcp_title text=t.surfaces.mcp_text href=plugins_mcp status="available" %}
   </ul>
 </section>
 

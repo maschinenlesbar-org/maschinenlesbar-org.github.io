@@ -19,9 +19,10 @@ Jeder Wrapper ist nach derselben Vorlage gebaut. Ein typisierter Client erledigt
 eigentliche Anbindung: Anfragen, Wiederholungen bei `429` und `503` unter Beachtung von
 `Retry-After`, Timeouts, Eingabeprüfung, Fehlerbehandlung und Zugangsdaten, die ihren Host
 nie verlassen. Darauf sitzen dünne Schichten: ein Kommandozeilen-Tool für Menschen und ein
-MCP-Server für Agenten. Weil beide denselben Client nutzen, wird aus einem Befehl und
-seinen Optionen direkt ein MCP-Tool mit seinem Eingabeschema – jeder weitere Wrapper
-kostet wenig.
+MCP-Server für Agenten. Beide nutzen denselben Client, und dort liegen auch die
+Anwendungsfälle: Die MCP-Tools beantworten die Fragen, die ein Agent stellt (das
+Abstimmungsverhalten einer Abgeordneten, die Wetterwarnungen für einen Ort), neben den
+einfachen Abfragen. So kostet jeder weitere Wrapper wenig.
 
 ## Drei Arten, einen zu nutzen
 
@@ -29,10 +30,30 @@ kostet wenig.
   {% include status.html status="available" %}
 - **Kommandozeilen-Tool**: eines pro API, mit Skills, die Claude Code beibringen, es zu
   nutzen. {% include status.html status="available" %}
-- **MCP-Server**: dieselben Befehle als MCP-Tools, auch als Container-Image zum
-  Selbstbetrieb. {% include status.html status="making" %}
+- **MCP-Server**: Tools für die Fragen, die Agenten stellen, auf npm und als Container-Image zum
+  Selbstbetrieb. {% include status.html status="available" %}
 
 Keine Laufzeit-Abhängigkeiten für HTTP: Alles baut auf Node.js selbst auf.
+
+## Einen MCP-Server betreiben
+
+Den Server jedes Wrappers gibt es als npm-Paket, `@maschinenlesbar.org/<api>-mcp`, und als
+Container-Image für mehrere Architekturen, `ghcr.io/{{ site.org }}/<api>-mcp`. Er spricht
+MCP über stdio oder, mit `--transport http` gestartet, über Streamable HTTP. Für die API
+des FIM-Portals, in Claude Code:
+
+```sh
+npm i -g @maschinenlesbar.org/fim-portal-mcp
+claude mcp add fim-portal -- fim-portal-mcp
+# oder, ohne etwas außer Docker zu installieren:
+claude mcp add fim-portal -- docker run -i --rm ghcr.io/{{ site.org }}/fim-portal-mcp:latest
+```
+
+Die Seite jeder API in der [Tool-Übersicht]({{ site.plugins_url }}de/#mcp) zeigt die Befehle
+für ihren Server; die `MCP.md` im jeweiligen Repository beschreibt andere Clients, die
+Optionen und nötige Zugangsdaten. Veröffentlichte Releases lassen sich nicht mehr ändern;
+jedes enthält SBOMs für Paket und Image, und die Provenienz des Images ist signiert, sodass
+`gh attestation verify` sie gegen das Release prüfen kann, das es gebaut hat.
 
 ## Die Wrapper heute
 

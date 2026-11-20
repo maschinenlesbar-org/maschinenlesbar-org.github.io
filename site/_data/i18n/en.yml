@@ -49,8 +49,8 @@ halves:
     scripts.
   mcp_title: schland mcp
   mcp_text: >-
-    The same wrappers as MCP tools, for agents. Same client, same commands, same answers:
-    use whichever fits.
+    The wrappers as MCP servers, for agents: tools for the questions an agent asks, on the
+    same client as the CLI.
   handoff: >-
     The handoff is the point. The index finds a source, and the matching wrapper fetches
     its live data. When a wrapper's answer cites a document, the index has it in full.
@@ -66,8 +66,8 @@ surfaces:
     One command-line tool per API, on npm, with skills that teach Claude Code to use it.
   mcp_title: For agents, over MCP
   mcp_text: >-
-    The wrappers and the search as MCP tools: finding and fetching from one endpoint,
-    run yourself or hosted by us.
+    One MCP server per API, on npm and as a container image, to run yourself. The search
+    tool and hosted servers, finding and fetching from one endpoint, are next.
 
 blog:
   title: Blog

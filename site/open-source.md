@@ -15,7 +15,7 @@ intro: >-
 ## Open source
 
 - **Every API wrapper**: the client, the command-line tool, its Claude Code skills, and
-  the MCP servers to come. Licensed under the
+  its MCP server with the container image. Licensed under the
   [AGPL-3.0-or-later](https://www.gnu.org/licenses/agpl-3.0.html): run it yourself for
   free; whoever runs a modified version as a network service publishes the changes.
 - **A commercial license**, in parallel, for building the wrappers into a proprietary
