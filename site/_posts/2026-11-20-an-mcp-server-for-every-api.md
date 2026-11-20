@@ -1,13 +1,13 @@
 ---
 title: An MCP server for every API
 ref: mcp-servers
-seo_title: "32 MCP servers for German public-sector APIs, on npm and ghcr.io"
+seo_title: "33 MCP servers for German public-sector APIs, on npm and ghcr.io"
 description: >-
-  Every maschinenlesbar.org wrapper now has an MCP server: 178 tools over 32 official
+  Every maschinenlesbar.org wrapper now has an MCP server: 178 tools over 33 official
   German APIs, on npm and as container images you can verify.
 ---
 
-Every one of the 32 API wrappers now has an MCP server next to its command-line tool. Together they have 178 tools, from the Bundestag's documents to water levels, weather warnings and the Tagesschau. Each is an npm package and a container image, open source like the rest.
+Every one of the 33 API wrappers now has an MCP server next to its command-line tool. Together they have 178 tools, from the Bundestag's documents to water levels, weather warnings and the Tagesschau. Each is an npm package and a container image, open source like the rest.
 
 ## Tools for questions, not endpoints
 

@@ -1,13 +1,13 @@
 ---
 title: Ein MCP-Server für jede API
 ref: mcp-servers
-seo_title: "32 MCP-Server für APIs aus Staat und Verwaltung, auf npm und ghcr.io"
+seo_title: "33 MCP-Server für APIs aus Staat und Verwaltung, auf npm und ghcr.io"
 description: >-
-  Jeder Wrapper von maschinenlesbar.org hat jetzt einen MCP-Server: 178 Tools für 32
+  Jeder Wrapper von maschinenlesbar.org hat jetzt einen MCP-Server: 178 Tools für 33
   amtliche APIs, auf npm und als Container-Images, die sich prüfen lassen.
 ---
 
-Jeder der 32 API-Wrapper hat jetzt neben seinem Kommandozeilen-Tool einen MCP-Server. Zusammen haben sie 178 Tools, von den Dokumenten des Bundestags über Pegelstände und Wetterwarnungen bis zur Tagesschau. Jeder ist ein npm-Paket und ein Container-Image, Open Source wie alles andere.
+Jeder der 33 API-Wrapper hat jetzt neben seinem Kommandozeilen-Tool einen MCP-Server. Zusammen haben sie 178 Tools, von den Dokumenten des Bundestags über Pegelstände und Wetterwarnungen bis zur Tagesschau. Jeder ist ein npm-Paket und ein Container-Image, Open Source wie alles andere.
 
 ## Tools für Fragen, nicht für Endpunkte
 
